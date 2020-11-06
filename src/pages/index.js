@@ -1,15 +1,43 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Logo from '../components/Logo'
 import Socials from '../components/Socials'
 import Footer from '../components/Footer'
 import SEO from "../components/seo"
 
-const IndexPage = ({ location }) => {
+const IndexPage = () => {
+  const { site } = useStaticQuery(
+    graphql`
+    query {
+      site {
+        siteMetadata {
+          description
+          siteUrl
+        }
+      }
+    }
+    `
+  )
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "nrdstr",
+    "description": site.siteMetadata.description,
+    "alternateName": "nrdstr design group",
+    "url": site.siteMetadata.siteUrl,
+    "logo": "https://nrdstr.com/nrdstr-logo.png",
+    "sameAs": [
+      "https://twitter.com/nrdstr_",
+      "https://facebook.com/nrdstr.design",
+      "https://instagram.com/nrdstr_",
+      "https://www.youtube.com/channel/UC-vQ0EMVGGOcSIw781MYOTg",
+      "https://nrdstr.com"
+    ]
+  }
   return (
     <Layout page='home'>
-      <SEO title='graphic design, web design and development, web maintenance, and more' />
+      <SEO title='modern graphic design and web design' schemaMarkup={schema} />
       <div className='home animate--fade-in'>
         <Logo color={'#fefefe'} />
         <p className='home__description'>

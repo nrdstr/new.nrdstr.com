@@ -90,7 +90,7 @@ const Portfolio = () => {
     return (
         <>
             <Layout page='portfolio' modalToggled={modalToggle}>
-                <SEO title='digital design portfolio' description="Check out our portfolio of work with graphic design, web design and development, and motion design. Contact us today to discuss your next web, creative, or marketing project!" url='/portfolio' />
+                <SEO title='graphic and web design portfolio' description="Check out our portfolio of work with graphic design, web design and development, and motion design. Contact us today to discuss your next web, creative, or marketing project!" url='/portfolio' />
                 <GridNav handleGridNav={handleGridNav} activeTab={tab} tabs={['graphic', 'web']} />
                 <Grid tab={tab} data={images[tab]} handleToggleModal={handleToggleModal} />
                 <Modal handleModalPagination={handleModalPagination} toggled={modalToggle} data={modalData} handleToggleModal={handleToggleModal} tab={tab} />
