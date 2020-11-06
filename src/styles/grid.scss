@@ -1,0 +1,104 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    @include size(100%, 100%);
+    box-sizing: border-box;
+    overflow: auto;
+    padding-right: 5px;
+
+    &__img,
+    .gatsby-image-wrapper {
+        @include size(100%, 100%);
+        opacity: 1;
+    }
+
+    @media (max-width: 575.98px) {
+        grid-template-columns: 1fr !important;
+        padding-right: 0;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar { width: 0 !important; }
+    }
+
+    &::-webkit-scrollbar { width: 0.7rem !important }
+
+    &::-webkit-scrollbar-track {
+        background-color: lighten($black, 5%);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $purple;
+      }
+
+      @media (max-width: 575.98px) {
+        &::-webkit-scrollbar { width: 0 !important; opacity: 0; }
+      }
+
+
+      @media only screen
+        and (min-device-width: 320px)
+        and (max-device-width: 480px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: landscape) {
+            overflow: hidden;
+        }
+
+        @media only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 667px)
+        and (-webkit-min-device-pixel-ratio: 2)
+        and (orientation: landscape) {
+            overflow: hidden;
+        }
+
+        @media only screen
+        and (min-device-width: 414px)
+        and (max-device-width: 736px)
+        and (-webkit-min-device-pixel-ratio: 3)
+        and (orientation: landscape) {
+            overflow: hidden;
+        }
+
+        @media only screen
+        and (min-device-width: 375px)
+        and (max-device-width: 812px)
+        and (-webkit-min-device-pixel-ratio: 3)
+        and (orientation: landscape) {
+            overflow: hidden;
+        }
+
+
+    img {
+        @include size(100%, 100%);
+        object-fit: cover;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    &__placeholder {
+        font-family: $font;
+        color: white;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    &--motion  {
+        grid-template-columns: 1fr 1fr;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &--web {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 575.98px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    align-items: center;
+    z-index: 2;
+
+    &__inner {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 20px;
+        box-sizing: border-box;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+.mobile-menu-btn {
+    @include size(50px, 50px);
+    @include flex(column, center, center);
+    position: relative;
+    z-index: 2000;
+
+    &__bar {
+        @include size(100%, 6px);
+        position: absolute;
+        background-color: $white;
+        transition: all .433s ease-in-out;
+
+        &:first-child {
+            top: 0;
+            transform: rotate(0);
+        }
+
+        &:last-child {
+            bottom: 0;
+            transform: rotate(0);
+        }
+
+        &--active {
+            &:first-child {
+                transform: rotate(45deg);
+            }
+
+            &:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

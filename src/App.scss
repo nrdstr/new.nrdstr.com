@@ -1,0 +1,210 @@
+@import './styles/base';
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background-color: $black;
+  overflow: hidden;
+}
+
+#root {
+  overflow: hidden;
+}
+
+ul,li {
+  list-style: none;
+  color: $white;
+  font-family: $font;
+  font-size: 1rem;
+}
+
+h1 {
+  color: $black;
+  font-family: $font;
+  background-color: white;
+  padding: 7px;
+  text-align: center;
+  transform: rotate(3deg);
+  transition: all .2s ease-in-out;
+  min-width: 144px;
+}
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.app {
+  position: relative;
+  @include flex(row, center, center);
+  @include size(100vw, 100vh);
+  background-color: $black;
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+    max-width: 1400px;
+    @include size(100%, 100%);
+    @include flex(column, center, center);
+    box-sizing: border-box;
+
+    * {
+      box-sizing: border-box;
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  @include size(100%, 30px);
+  @include flex(row, center, center);
+
+  p {
+    margin: 0;
+    font-family: $font;
+    font-size: 0.8rem;
+    color: $white;
+    // font-weight: bold;
+  }
+
+}
+
+.no-show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $black;
+  z-index: 9999;
+  @include size(100%, 100%);
+  @include flex(column, center, center);
+  display: none;
+
+  p {
+    margin: 0;
+    color: $white;
+    font-family: $font;
+  }
+
+  @media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    display: flex;
+  }
+
+  @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+    display: flex;
+  }
+
+  @media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    display: flex;
+  }
+
+  @media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+    display: flex;
+  }
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.remove {
+  display: none;
+}
+
+.bg {
+
+  &--blue {
+    background-color: $blue;
+  }
+
+  &--purple {
+    background-color: $purple;
+  }
+
+  &--yellow {
+    background-color: $yellow;
+    color: $black;
+  }
+
+  &--pink {
+    background-color: $pink;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.animate {
+
+  &--fade-in {
+    animation: fade-in .5s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &--fade-in-fast {
+    animation: fade-in .2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &--fade-out {
+    animation: fade-out .5s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+.row {
+  @include flex(row, center, center);
+}
+
+.column {
+  @include flex(column, center, center);
+}
+
+
+.desktop {
+  @media (max-width: 575.98px) {
+    display: none;
+  }
+}
+
+.mobile {
+  @media (min-width: 575.97px) {
+    display: none;
+  }
+}

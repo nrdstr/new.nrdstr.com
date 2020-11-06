@@ -6,11 +6,28 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-transition-link`,
+    `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-robots-txt`,
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `39861700812`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/src/portfolio-images`,
       },
     },
     `gatsby-transformer-sharp`,

@@ -1,0 +1,175 @@
+.contact {
+    @include flex(row, center, center);
+    @include size(100%, 100%);
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+    @media (max-width: 575.98px) {
+        padding: 0;
+        padding-top: 400px;
+        overflow: auto;
+
+        &::-webkit-scrollbar { width: 0 !important; }
+    }
+
+    * {
+        &::selection {
+            background-color: $blue;
+        }
+    }
+
+    &__left {
+        @include flex(column, center, center);
+        @include size(50%, 100%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: $blue;
+    }
+
+    &__split {
+        @include flex(column, center, center);
+        @include size(100%, calc(100% - 20px));
+        background: $blue;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__container {
+        @include flex(column, center, center);
+        @include size(100%, calc(100% - 20px));
+        border: 3px solid $blue;
+        padding: 20px;
+
+        @media (max-width: 768px) {
+            padding-top: 0;
+            border: none;
+        }
+
+        @media (max-width: 575.98px) {
+            margin-bottom: 0;
+            // height: auto;
+        }
+
+        h2 {
+            font-family: $font;
+            color: $white;
+            font-size: 3rem;
+            margin: 0 0 3px 0;
+            text-align: center;
+
+            @media (max-width: 575.98px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        p {
+            font-family: $font;
+            color: $white;
+            font-size: 1.2rem;
+            margin: 0 0 7px 0;
+            max-width: 500px;
+            width: 100%;
+
+            @media (max-width: 575.98px) {
+                font-size: 1rem;
+            }
+        }
+
+        .link {
+            font-size: 1.2rem;
+
+            @media (max-width: 575.98px) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    &__info {
+        @media (max-width: 575.98px) {
+            // padding-top: 300px;
+        }
+    }
+
+    &__icon {
+        @include size(90px, 90px);
+      }
+
+    &__form {
+        @include flex(column, center, center);
+        width: 100%;
+        height: 100%;
+        max-width: 600px;
+
+        @media (max-width: 575.98px) {
+            min-height: 515px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__input {
+        @include size(100%, 50px);
+        font-family: $font;
+        appearance: none;
+        color: $black;
+        font-size: 1.2rem;
+        box-sizing: border-box;
+        border: 0;
+        font-weight: bold;
+        letter-spacing: -.5px;
+        margin: 7px 0;
+        padding: 15px 0 15px 10px;
+        outline: 0;
+        transition: all .2s ease-in-out;
+    }
+
+    &__textarea {
+        @include size(100%, 100%);
+        margin: 7px 0;
+        padding: 10px 0 10px 10px;
+        font-family: $font;
+        appearance: none;
+        box-sizing: border-box;
+        color: $black;
+        font-size: 1.2rem;
+        border: 0;
+        font-weight: bold;
+        letter-spacing: -.5px;
+        // min-height: 200px;
+        resize: none;
+        outline: 0;
+        border: none;
+    }
+
+    &__submit-btn {
+        @include size(100%, 100px);
+        background-color: $pink;
+        color: $black;
+        font-family: $font;
+        font-size: 1.2rem;
+        font-weight: bold;
+        outline: 0;
+        border: 0;
+        padding: 20px 0;
+        margin: 7px 0 0 0;
+        transition: all .2s ease-in-out;
+
+        &:focus,
+        &:hover,
+        &:active {
+            background-color: darken($pink, 5%);
+        }
+
+        &:disabled {
+            background-color: lighten($pink, 13%);
+            color: lighten($black, 30%);
+            cursor: not-allowed;
+        }
+
+    }
+}

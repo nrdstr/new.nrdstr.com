@@ -1,18 +1,18 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Background from './Background'
+import NoShow from './NoShow'
+import Div100vh from 'react-div-100vh'
+import TopBar from '../components/TopBar'
+import "../App.scss"
 
-import Header from "./header"
-import "./layout.css"
+const Layout = ({ children, page, modalToggled }) => {
+  const [init, setInit] = useState(false)
+  const [menuToggled, setMenuToggled] = useState(false)
+  const [logoBorder, setLogoBorder] = useState('color-2')
+  const changeBorderColor = color => setLogoBorder(color)
 
-const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,26 +23,21 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const handleMenuToggle = () => setMenuToggled(!menuToggled)
+
+  useEffect(() => {
+    if (!init) setInit(true)
+  }, [])
+
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+    <Div100vh className='app'>
+      <Background changeColor={changeBorderColor} init={init} page={page} />
+      <div className='app__inner'>
+        <TopBar modalToggled={modalToggled} handleMenuToggle={handleMenuToggle} />
+        <main className={`main main__content main__${page}`}>{children}</main>
       </div>
-    </>
+      <NoShow />
+    </Div100vh>
   )
 }
 

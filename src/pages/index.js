@@ -2,21 +2,29 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import Logo from '../components/Logo'
+import Socials from '../components/Socials'
+import Footer from '../components/Footer'
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const IndexPage = ({ location }) => {
+  console.log(location)
+  return (
+    <Layout page='home'>
+      <SEO title='graphic design, web design and development, web maintenance, and more' />
+      <div className='home animate--fade-in'>
+        <Logo color={'#fefefe'} />
+        <p className='home__description animate--fade-in'>
+          we are a <strong>digital design</strong> agency that delivers graphic design, web design and development, advertising design, and many more <Link className='link' to='services'>services</Link>.
+                            </p>
+        <Link className='home__cta-btn' to='contact' title='see our available services'>
+          get a quote
+      </Link>
+        <Socials />
+      </div>
+      <Footer />
+    </Layout>
+  )
+}
 
 export default IndexPage

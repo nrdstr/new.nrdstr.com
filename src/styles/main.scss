@@ -1,0 +1,55 @@
+.main {
+    position: relative;
+    @include flex(column, flex-start, center);
+    padding: 30px 20px;
+    padding-bottom: 0;
+    border: 3px solid $purple;
+    background-color: #151515;
+    border-radius: $radius;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 1;
+    transition: all 0.466s ease-in-out, min-height 0.466s ease-in-out;
+
+    &--init {
+      padding: 0;
+      border-color: transparent !important;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    &__logo {
+      @include flex(row, center, center);
+      width: 100%;
+    }
+
+    &__content {
+      height: 100%;
+      overflow: hidden;
+      padding-top: 100px;
+      background-color: transparentize(#151515, 0.13);
+    }
+
+    &__home {
+      height: 100%;
+      border-left-color: $blue;
+      border-right-color: $yellow;
+      border-top-color: $pink;
+      border-bottom-color: $purple;
+    }
+
+    &__about {
+      @include flex(column, center, center);
+    }
+  }
+
+
+  .content {
+    @include flex(column, flex-start, flex-start);
+    @include size(100%, 100%);
+    transition: all 0.2s ease-in-out;
+
+    &--show {
+      opacity: 1;
+    }
+  }
