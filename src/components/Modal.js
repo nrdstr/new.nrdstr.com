@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 // import YouTube from 'react-youtube-embed'
 import { ExternalLink } from '../icons/icons'
-import Img from "gatsby-image"
 import { webData } from '../utils/web'
 
 const Modal = props => {
-    const [ids, setIds] = useState([])
     const [content, setContent] = useState()
     const modal = useRef(null)
 
@@ -13,12 +11,11 @@ const Modal = props => {
         props.handleToggleModal()
     }
 
-    const handlePagination = direction => props.handleModalPagination('next')
+    const handlePagination = direction => props.handleModalPagination(direction)
 
 
     const Graphic = () => {
         const data = props.data
-        console.log(data)
         return <img
             className='modal__image animate--fade-in-fast'
             alt='portfolio item'
@@ -34,7 +31,6 @@ const Modal = props => {
         const data = props.data
         const dataName = data.name.replace('web-', '').replace('.jpg', '')
         const site = webData.filter(web => web.name.replaceAll(' ', '') === dataName)
-        // console.log(props.data)
         return (
             <>
                 <div className='modal__web animate--fade-in'>

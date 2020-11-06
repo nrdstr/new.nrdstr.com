@@ -13,11 +13,6 @@ const Loader = () => {
             <div className='loader-logo'>
                 <NrdstrIcon />
             </div>
-
-            {/* <div className="item item-1"><NrdstrIcon /></div>
-            <div className="item item-2"><NrdstrIcon /></div>
-            <div className="item item-3"><NrdstrIcon /></div>
-            <div className="item item-4"><NrdstrIcon /></div> */}
         </div>
     )
 }

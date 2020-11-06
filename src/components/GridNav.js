@@ -3,7 +3,7 @@ import React from 'react'
 const GridNav = props => {
 
     return (
-        <div className='grid-nav'>
+        <div className='grid-nav animate--fade-in'>
             {
                 props.tabs.map(tab => {
                     return (

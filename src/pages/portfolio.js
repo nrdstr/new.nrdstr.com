@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-
+import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Modal from '../components/Modal'
@@ -44,13 +43,11 @@ const Portfolio = () => {
     const handleToggleModal = (t, original, i) => {
         if (!modalToggle) {
             const fullImage = images.webFull.filter(im => im.node.childImageSharp.fluid.originalName.replace('full-', '').replace('.png', '') === original.replace('web-', '').replace('.jpg', ''))
-            console.log(fullImage)
             setModalData({
                 tab: t,
                 name: original,
                 index: i,
-                image: tab === 'graphic' ? images.graphic[i].node.childImageSharp.fluid : fullImage[0].node.childImageSharp.fluid,
-                // imageNext: tab === 'graphic' ?
+                image: tab === 'graphic' ? images.graphic[i].node.childImageSharp.fluid : fullImage[0].node.childImageSharp.fluid
             })
             setModalToggle(true)
         } else {
@@ -77,9 +74,9 @@ const Portfolio = () => {
 
         if (direction === 'previous') {
             if (currIndex <= 0) {
-                currIndex--
-            } else {
                 currIndex = images.graphic.length - 1
+            } else {
+                currIndex--
             }
             setModalData({
                 ...modalData,
@@ -93,7 +90,7 @@ const Portfolio = () => {
     return (
         <>
             <Layout page='portfolio' modalToggled={modalToggle}>
-                <SEO title="Portfolio" />
+                <SEO title='digital design portfolio' description="Check out our portfolio of work with graphic design, web design and development, and motion design. Contact us today to discuss your next web, creative, or marketing project!" url='/portfolio' />
                 <GridNav handleGridNav={handleGridNav} activeTab={tab} tabs={['graphic', 'web']} />
                 <Grid tab={tab} data={images[tab]} handleToggleModal={handleToggleModal} />
                 <Modal handleModalPagination={handleModalPagination} toggled={modalToggle} data={modalData} handleToggleModal={handleToggleModal} tab={tab} />

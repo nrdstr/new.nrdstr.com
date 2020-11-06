@@ -8,8 +8,8 @@ import Socials from '../components/Socials'
 
 const About = () => (
     <Layout page='about'>
-        <SEO title="About" />
-        <div className='about__description'>
+        <SEO title='the nrdstr story' description="We are a group of graphic, ui, and web designers based in the united states offering services ranging from logo design to website development. Contact us today to discuss your next web, creative, or marketing project!" url='/about' />
+        <div className='about__description animate--fade-in'>
             <h2 className='about__title'><Logo color={'#151515'} /></h2>
             <p>
                 we are a group of graphic, ui, and web designers based in the united states offering services ranging from logo design to website development>. we enjoy good challenges to help push our creative limits further every day.

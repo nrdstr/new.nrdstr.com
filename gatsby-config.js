@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `nrdstr digital designs`,
+    description: `Delivering strong, modern graphic design and web design services. We also offer SEO, website maintenance, and social media design services. Contact us today to discuss your next web, creative, or marketing project.`,
+    author: `@nrdstr_`,
+    siteUrl: `https://www.nrdstr.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,6 +11,13 @@ module.exports = {
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-M3DTC95",
+        includeInDevelopment: false
+      },
+    },
     {
       resolve: `gatsby-source-instagram`,
       options: {
@@ -36,12 +44,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `starter`,
+        short_name: `nrdstr`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#151515`,
+        theme_color: `#151515`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/n-icon.png`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

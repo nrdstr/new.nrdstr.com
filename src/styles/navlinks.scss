@@ -28,6 +28,10 @@
                     background-color: $blue;
                 }
             }
+
+            .nav-link::after {
+                border-bottom-color: $blue
+            }
         }
 
         &:nth-child(2) {
@@ -35,6 +39,10 @@
                 &::after {
                     background-color: $purple;
                 }
+            }
+
+            .nav-link::after {
+                border-bottom-color: $purple
             }
         }
 
@@ -44,6 +52,10 @@
                     background-color: $yellow;
                 }
             }
+
+            .nav-link::after {
+                border-bottom-color: $yellow
+            }
         }
 
         &:last-child {
@@ -51,6 +63,10 @@
                 &::after {
                     background-color: $pink;
                 }
+            }
+
+            .nav-link::after {
+                border-bottom-color: $pink;
             }
         }
     }
@@ -62,11 +78,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-left: 0;
-    overflow: hidden;
-    border-right: 0;
-    border-top: 0;
+    color: white;
+    min-width: 90px;
+    font-size: 1rem;
+    font-family: $font;
+    font-weight: 700;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: 0;
     z-index: 1;
+
+    @media (max-width: 575.98px) {
+        font-size: 1.5rem;
+        padding: 30px 0;
+
+        &:hover {
+            border-color: transparent !important;
+        }
+
+        &::after {
+            border-bottom: none !important;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-bottom: 3px solid $yellow;
+        transform: scaleY(1);
+        transform-origin: bottom;
+        height: 100%;
+        z-index: 0;
+        transition: all 0.2s ease-in-out;
+    }
 
     @media (max-width: 575.98px) {
         width: 100%;
@@ -78,38 +126,30 @@
         z-index: 10;
     }
 
-    &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        transform: scaleY(0);
-        transform-origin: bottom;
-        height: 100%;
-        z-index: 0;
-        transition: all 0.2s ease-in-out;
-    }
+    @media (min-width: 577px) {
+        &--active {
+            &::after {
+                transform: scaleY(2) !important;
+            }
+        }
 
-    &--active {
-        &::after {
-            transform: scaleY(0.2) !important;
+        &:focus,
+        &:hover {
+
+            &::after {
+                transform: scaleY(2) !important;
+            }
         }
     }
 
-    &:focus,
-    &:hover {
 
-        &::after {
-            transform: scaleY(0.2) !important;
-        }
-    }
+
+
 }
 
 .btn {
     position: relative;
     background: $black;
-    border-bottom: 3px solid $yellow;
     color: white;
     min-width: 90px;
     font-size: 1rem;
@@ -121,23 +161,40 @@
     outline: 0;
     z-index: 5;
 
-    &:hover {
-      border-color: $pink;
-    }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     left: 0;
+    //     bottom: 0;
+    //     width: 100%;
+    //     border-bottom: 3px solid $yellow;
+    //     transform: scaleY(0);
+    //     transform-origin: bottom;
+    //     height: 100%;
+    //     z-index: 0;
+    //     transition: all 0.2s ease-in-out;
+    // }
 
-    &--active {
-        &::after {
-            transform: scaleY(0.2) !important;
-        }
-    }
+    // &:hover {
 
-    &:focus,
-    &:hover {
+    //   &::after {
+    //     transform: scaleY(0.2) !important;
+    //   }
+    // }
 
-        &::after {
-            transform: scaleY(0.2) !important;
-        }
-    }
+    // &--active {
+    //     &::after {
+    //         transform: scaleY(0.2) !important;
+    //     }
+    // }
+
+    // &:focus,
+    // &:hover {
+
+    //     &::after {
+    //         transform: scaleY(0.2) !important;
+    //     }
+    // }
 
     @media (max-width: 575.98px) {
         font-size: 1.5rem;

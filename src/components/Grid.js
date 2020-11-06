@@ -14,7 +14,6 @@ const Grid = props => {
                         index={i}
                         id={i}
                         tab={props.tab} />
-                    //  }
                 })}
             </div>
         )

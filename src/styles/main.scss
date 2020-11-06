@@ -9,7 +9,7 @@
     box-sizing: border-box;
     width: 100%;
     z-index: 1;
-    transition: all 0.466s ease-in-out, min-height 0.466s ease-in-out;
+    transition: all 0.466s ease-in-out;
 
     &--init {
       padding: 0;
@@ -36,10 +36,23 @@
       border-right-color: $yellow;
       border-top-color: $pink;
       border-bottom-color: $purple;
+      transition: all 0.466s ease-in-out;
+    }
+
+    &__services {
+      border-color: $yellow !important;
+      transition: all 0.466s ease-in-out;
     }
 
     &__about {
       @include flex(column, center, center);
+      border-color: $pink !important;
+      transition: all 0.466s ease-in-out;
+    }
+
+    &__contact {
+      border-color: $blue;
+      transition: all 0.466s ease-in-out;
     }
   }
 

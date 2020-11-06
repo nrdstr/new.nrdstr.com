@@ -1,14 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Logo from '../components/Logo'
-import Socials from '../components/Socials'
 
 const Services = () => (
     <Layout page='services'>
-        <SEO title="Services" />
+        <SEO title='our digital services' description="We offer a plethora of digital services, such as web design and development, graphic design, website maintenance and hosting, youtube videos, social media, design, and much more. Contact us today to discuss your next web, creative, or marketing project!" url='/services' />
         <div className='services animate--fade-in'>
             <div className='services__grid'>
                 <div className='services__grid-item'>
@@ -27,7 +24,7 @@ const Services = () => (
                             <li>album and mixtape design</li>
                             <li>social media design</li>
                         </ul>
-                        <Link to='contact' className='services__cta-btn'>
+                        <Link to='/contact' className='services__cta-btn'>
                             get started
                         </Link>
                     </div>
@@ -49,7 +46,7 @@ const Services = () => (
                             <li>modern website design</li>
                             <li>website hosting and maintenance</li>
                         </ul>
-                        <Link to='contact' className='services__cta-btn'>
+                        <Link to='/contact' className='services__cta-btn'>
                             get started
                         </Link>
                     </div>
@@ -71,7 +68,7 @@ const Services = () => (
                             <li>website monitoring</li>
                             <li>website hosting</li>
                         </ul>
-                        <Link to='contact' className='services__cta-btn'>
+                        <Link to='/contact' className='services__cta-btn'>
                             get started
                         </Link>
                     </div>
@@ -93,7 +90,7 @@ const Services = () => (
                             <li>custom posts</li>
                             <li>advertisements</li>
                         </ul>
-                        <Link to='contact' className='services__cta-btn'>
+                        <Link to='/contact' className='services__cta-btn'>
                             get started
                         </Link>
                     </div>
@@ -115,7 +112,7 @@ const Services = () => (
                             <li>music videos</li>
                             <li>advertisements</li>
                         </ul>
-                        <Link to='contact' className='services__cta-btn'>
+                        <Link to='/contact' className='services__cta-btn'>
                             get started
                         </Link>
                     </div>
@@ -137,7 +134,7 @@ const Services = () => (
                             <li>instagram ads</li>
                             <li>totally custom ads</li>
                         </ul>
-                        <Link to='contact' className='services__cta-btn'>
+                        <Link to='/contact' className='services__cta-btn'>
                             get started
                         </Link>
                     </div>

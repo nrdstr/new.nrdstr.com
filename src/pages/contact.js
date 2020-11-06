@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-
-
-
 import Socials from '../components/Socials'
 import { NrdstrContactIcon } from '../icons/icons'
 
-const Contact = ({ location }) => {
-    console.log(location)
+const Contact = () => {
     const [isDisabled, setDisabled] = useState(true)
     const [messageSuccess, setMessageSuccess] = useState(false)
     const [emailIsValidated, setEmailVaildation] = useState(false)
