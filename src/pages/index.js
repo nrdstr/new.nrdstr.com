@@ -37,7 +37,7 @@ const IndexPage = () => {
   }
   return (
     <Layout page='home'>
-      <SEO title='nrdstr modern graphic design and web design' schemaMarkup={schema} />
+      <SEO title='Nrdstr modern graphic design and web design' schemaMarkup={schema} />
       <div className='home animate--fade-in'>
         <Logo color={'#fefefe'} />
         <p className='home__description'>
