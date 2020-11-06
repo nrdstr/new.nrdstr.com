@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 // import YouTube from 'react-youtube-embed'
 import { ExternalLink } from '../icons/icons'
 import { webData } from '../utils/web'
+import Img from "gatsby-image"
 
 const Modal = props => {
     const [content, setContent] = useState()
@@ -34,11 +35,13 @@ const Modal = props => {
         return (
             <>
                 <div className='modal__web animate--fade-in'>
-                    <div className='modal__web-image-container'>
-                        <img
-                            className='modal__web-image animate--fade-in-fast'
-                            alt={site[0].name}
-                            src={data.image.src} />
+                    <div className='modal__wrapper'>
+                        <div className='modal__web-image-container'>
+                            <Img
+                                className='modal__web-image'
+                                alt={site[0].name}
+                                fluid={data.image} />
+                        </div>
                     </div>
                     <div className='column modal__web-container'>
                         <a className='modal__web-link' href={`https://${site[0].url}`} title={`https://${site[0].url}`}>
