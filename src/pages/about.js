@@ -15,7 +15,7 @@ const About = () => (
                 we are a group of graphic, ui, and web designers based in the united states offering services ranging from logo design to website development>. we enjoy good challenges to help push our creative limits further every day.
                                 </p>
             <p style={{ marginTop: 20 }}>
-                check out our <Link className='link' to='services'>services</Link> page for more information. we'd be delighted to make your next project a <strong>nrdstr</strong> project!
+                check out our <Link className='link' to='/services'>services</Link> page for more information. we'd be delighted to make your next project a <strong>nrdstr</strong> project!
                                 </p>
         </div>
         <Socials />
