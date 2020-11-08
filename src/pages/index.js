@@ -3,6 +3,8 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Logo from '../components/Logo'
 import Socials from '../components/Socials'
+import Instagram from '../components/instagram'
+import { InstagramIcon } from '../icons/icons'
 import Footer from '../components/Footer'
 import SEO from "../components/seo"
 
@@ -37,8 +39,8 @@ const IndexPage = () => {
   }
   return (
     <Layout page='home'>
-      <SEO title='Nrdstr modern graphic design and web design' schemaMarkup={schema} />
-      <div className='home animate--fade-in'>
+      <SEO title='nrdstr - modern graphic design and web design' schemaMarkup={schema} />
+      {/* <div className='home animate--fade-in'>
         <Logo color={'#fefefe'} />
         <p className='home__description'>
           we are a <strong>digital design</strong> agency that delivers graphic design, web design and development, advertising design, and many more <Link className='link' to='/services'>services</Link>.
@@ -47,8 +49,60 @@ const IndexPage = () => {
           get a quote
       </Link>
         <Socials />
+      </div> */}
+
+      <div className='home-wrapper'>
+        <div className='about__container animate--fade-in'>
+          <h2 className='about__title'><Logo color={'#151515'} /></h2>
+          <p>
+            we are a <strong>digital design</strong> agency that delivers graphic design, web design and development, advertising design, and many more <Link className='link' to='/services'>services</Link>. we enjoy good challenges to help push our creative limits further every day.
+                                </p>
+          <p style={{ marginTop: 20 }}>
+            check out our <Link className='link' to='/portfolio'>portfolio</Link> to see some of our work. we'd be delighted to make your next project a <strong>nrdstr</strong> project!
+        </p>
+          <Socials />
+          <Link className='home__cta-btn' to='/contact' title='get a quote today'>
+            get a quote &#8594;
+        </Link>
+          {/* <h3 className='home__arrow-down'>&#8595;</h3> */}
+        </div>
+        <div className='home__row'>
+          {/* <h3>what we do</h3> */}
+          <ul className='home__grid'>
+            <li>
+              <div className='icon icon--graphic-design' />
+              <p>graphic design</p>
+            </li>
+            <li>
+              <div className='icon icon--website-design' />
+              <p>website design</p>
+            </li>
+            <li><div className='icon icon--website-maintenance' />
+              <p>website maintenance</p></li>
+            <li><div className='icon icon--sm-design' />
+              <p>social media design</p></li>
+            <li><div className='icon icon--video-editing' />
+              <p>video editing</p></li>
+            <li><div className='icon icon--ad-design' />
+              <p>advertisement design</p></li>
+          </ul>
+          <Link className='home__cta-btn home__cta-btn--services' to='/services' title='see our available services'>
+            our services &#8594;
+        </Link>
+        </div>
+        <div className='about__container home__social'>
+          <InstagramIcon />
+          <Instagram />
+          <h3 className='home__social-cta'>
+            want to see more? follow us on <a href='https://instagram.com/nrdstr_' title='nrdstr on instagram'>instagram</a>.
+          </h3>
+        </div>
+
+        <div className='home__section home__section--blog'>
+          <h3>the latest</h3>
+        </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </Layout>
   )
 }

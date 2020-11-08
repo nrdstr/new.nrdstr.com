@@ -7,11 +7,7 @@
       padding-bottom: 50px;
     }
 
-    * {
-      &::selection {
-          background-color: $pink;
-      }
-    }
+
 
     &__title {
       padding: 10px 15px;
@@ -22,6 +18,7 @@
       animation: gradient 15s ease infinite;
       font-weight: bold;
       font-size: 4rem;
+      width: 100%;
       text-align: left;
       text-align: center;
       transform: rotate(1deg);
@@ -49,11 +46,24 @@
       max-width: 300px;
     }
 
-    &__description {
+    &__container {
+      position: relative;
       max-width: 700px;
       color: $white;
       font-size: 1.2rem;
       font-family: $font;
+      margin-top: 50px;
+      @include flex(column, center, center);
+      width: 100%;
+
+      &:first-child {
+        min-height: calc(100vh - 100px);
+        margin-top: 0;
+      }
+
+      p::selection {
+        background: $pink;
+      }
 
       .link {
         font-size: 1.2rem;

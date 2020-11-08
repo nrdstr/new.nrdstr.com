@@ -44,7 +44,7 @@
       transition: all 0.466s ease-in-out;
     }
 
-    &__about {
+    &__about, &__blog, &__blog-post {
       @include flex(column, center, center);
       border-color: $pink !important;
       transition: all 0.466s ease-in-out;

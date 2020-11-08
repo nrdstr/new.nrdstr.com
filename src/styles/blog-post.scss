@@ -1,0 +1,106 @@
+.blog-post-container {
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+    @include flex(column, center, center);
+
+    @media (max-width: 575.98px) {
+        &::-webkit-scrollbar { width: 0 !important; }
+    }
+
+    &::-webkit-scrollbar { width: 0.7rem !important }
+
+    &::-webkit-scrollbar-track {
+        background-color: lighten($black, 5%);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $pink;
+    }
+}
+
+.blog-post-top {
+    width: 100%;
+    margin-top: 20px;
+    @include flex(row, flex-start, center);
+}
+
+.blog-post {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    max-width: 680px;
+    height: 100%;
+    padding-bottom: 30px;
+
+    *::selection {
+        background: $pink;
+    }
+
+
+
+    &__back {
+        font-family: $font;
+        font-size: 1.1rem;
+        color: $blue;
+        font-weight: bold;
+        transition: all .2s ease-in-out;
+
+        &:focus,
+        &:hover {
+            color: $pink;
+        }
+    }
+
+    &__date {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        font-size: 1rem !important;
+        margin-bottom: 10px;
+    }
+
+    &__square {
+        display: inline-block;
+        @include size(5px, 5px);
+        margin: 0 5px 3px 5px;
+        background-color: $yellow;
+    }
+
+    h1 {
+        transform: rotate(0);
+        background: transparent;
+        color: white;
+        font-size: 7.4vw;
+        text-align: left;
+        font-weight: 900;
+        margin: 0;
+    }
+
+    p {
+        font-family: $font;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    figure {
+        margin: 0;
+        width: 100%;
+        max-width: 680px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    a {
+        color: $blue;
+        font-weight: bold;
+        transition: all .2s ease-in-out;
+
+        &:focus,
+        &:hover {
+            color: $pink;
+        }
+    }
+}
