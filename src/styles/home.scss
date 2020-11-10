@@ -68,18 +68,27 @@
       width: 100%;
       background-color: $purple;
       background: linear-gradient(to bottom, $purple, $pink);
-      min-height: 100vh;
-      height: 100%;
+      box-shadow: 0px 1px 16px 0px transparentize($pink, 0.4), 0px -1px 16px 0px transparentize($purple, 0.4);
+      // min-height: 100vh;
+      // height: 100%;
       padding: 20px;
       @include flex(column, center, center);
 
       @media (max-height: 768px) {
-        min-height: 200vh;
+        // min-height: 0 !important;
+        // height: auto !important;
       }
+
+      // &--services {
+      //   @media (min-height: 769px) {
+      //     min-height: calc(100vh - 100px);
+      //   }
+      // }
 
       &--blog {
         background: linear-gradient(to bottom, $pink, $purple);
-        min-height: 100%;
+        box-shadow: 0px 1px 16px 0px transparentize($purple, 0.4), 0px -1px 16px 0px transparentize($pink, 0.4);
+        // min-height: 100%;
       }
 
       &::before {
@@ -119,6 +128,7 @@
         z-index: 1;
         @include size(100%, 100%);
         max-height: 448px;
+        min-height: 300px;
 
         // &::before {
         //   content: '';
@@ -213,25 +223,35 @@
       border: 3px solid $pink;
       color: white;
       font-family: $font;
-      max-width: 216px;
+      max-width: 300px;
       width: 100%;
       text-align: center;
       font-size: 1.2rem;
       font-weight: bold;
-      padding: 20px;
-      margin: 20px 0 10px 0;
+      padding: 30px 0;
+      margin: 20px 0;
       transition: all .2s ease-in-out;
+      box-shadow: 0px 1px 16px 0px transparentize($blue, 0.6), inset 0px 1px 16px 0px transparentize($blue, 0.6);
+
+      @media (max-width: 575.98px) {
+        max-width: 250px;
+      }
 
       &:focus,
       &:hover,
       &:focus-within {
         background-color: $blue;
         border-color: $blue;
+        box-shadow: 0px 0px 16px 2px transparentize($blue, 0.3), inset 0px 1px 16px 0px transparent;
       }
 
       &--services, &--blog {
         border-color: $blue;
         z-index: 2;
+      }
+
+      &--pink, &--contact {
+        box-shadow: 0px 1px 16px 0px transparentize($pink, 0.6), inset 0px 1px 16px 0px transparentize($pink, 0.6);
       }
     }
 }

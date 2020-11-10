@@ -74,17 +74,16 @@ const IndexPage = () => {
           <p>
             we are a <strong>digital design</strong> agency that delivers graphic design, web design and development, advertising design, and many more <Link className='link' to='/services'>services</Link>. we enjoy good challenges to help push our creative limits further every day.
                                 </p>
-          <p style={{ marginTop: 20 }}>
+          <p style={{ margin: '20px 0' }}>
             check out our <Link className='link' to='/portfolio'>portfolio</Link> to see some of our work. we'd be delighted to make your next project a <strong>nrdstr</strong> project!
         </p>
           <Socials />
-          <Link className='home__cta-btn' to='/contact' title='get a quote today'>
+          <Link className='home__cta-btn home__cta-btn--pink' to='/contact' title='get a quote today'>
             get a quote &#8594;
         </Link>
           <h3 className='home__arrow-down desktop'>&#8595;</h3>
         </div>
-        <div className='home__row'>
-          {/* <h3>what we do</h3> */}
+        <div className='home__row home__row--services'>
           <ul className='home__grid'>
             <li>
               <div className='icon icon--graphic-design' />
@@ -116,17 +115,15 @@ const IndexPage = () => {
         </div>
 
         <div className='home__row home__row--blog'>
-          <h3 style={{ marginBottom: 0 }}>the latest</h3>
-          <div key={wp.slug} className='blog-container blog-container--home' style={{ zIndex: 2 }} >
-            <Link className='blog' to={`/blog/${wp.slug}`}>
-              <h3>{wp.title}</h3>
-              <p className='blog__date'>{wp.date}</p>
-              <div className='blog__categories'>
-                {wp.categories.map(cat => <p className='modal__web-tag blog__tag'>{cat.name}</p>)}
-              </div>
-              <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} />
-            </Link>
-          </div>
+          <h3 style={{ marginBottom: 0, fontSize: '2rem' }}>the latest</h3>
+          <Link className='blog' to={`/blog/${wp.slug}`} style={{ zIndex: 2 }}>
+            <h3>{wp.title}</h3>
+            <p className='blog__date'>{wp.date}</p>
+            <div className='blog__categories'>
+              {wp.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} />
+          </Link>
           <Link className='home__cta-btn home__cta-btn--blog' to='/blog' title='our blog'>
             our blog &#8594;
           </Link>

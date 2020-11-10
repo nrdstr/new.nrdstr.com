@@ -7,7 +7,7 @@ const Footer = ({ size }) => {
     if (size === 'big') {
         return <footer className='footer footer--big animate--fade-in'>
             <h3>get a quote</h3>
-            <p style={{ fontSize: '1rem' }}>let's make your next project a <strong>nrdstr</strong> project.</p>
+            <p style={{ fontSize: '1rem', textAlign: 'center' }}>let's make your next project a <strong>nrdstr</strong> project.</p>
             <div className='row'>
                 <div className='footer__col'>
                     <div>
