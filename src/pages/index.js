@@ -9,13 +9,26 @@ import Footer from '../components/Footer'
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-  const { site } = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
     query {
       site {
         siteMetadata {
           description
           siteUrl
+        }
+      }
+      allWordpressPost(sort: { fields: [date] }) {
+        edges {
+          node {
+            title
+            excerpt
+            slug
+            date(formatString: "MM-DD-YYYY")
+            categories {
+              name
+            }
+          }
         }
       }
     }
@@ -25,9 +38,9 @@ const IndexPage = () => {
     "@context": "https://schema.org",
     "@type": "Corporation",
     "name": "nrdstr",
-    "description": site.siteMetadata.description,
+    "description": data.site.siteMetadata.description,
     "alternateName": "nrdstr design group",
-    "url": site.siteMetadata.siteUrl,
+    "url": data.site.siteMetadata.siteUrl,
     "logo": "https://nrdstr.com/nrdstr-logo.png",
     "sameAs": [
       "https://twitter.com/nrdstr_",
@@ -37,6 +50,7 @@ const IndexPage = () => {
       "https://nrdstr.com"
     ]
   }
+  const wp = data.allWordpressPost.edges[0].node
   return (
     <Layout page='home'>
       <SEO title='nrdstr - modern graphic design and web design' schemaMarkup={schema} />
@@ -67,7 +81,7 @@ const IndexPage = () => {
           <Link className='home__cta-btn' to='/contact' title='get a quote today'>
             get a quote &#8594;
         </Link>
-          {/* <h3 className='home__arrow-down'>&#8595;</h3> */}
+          <h3 className='home__arrow-down desktop'>&#8595;</h3>
         </div>
         <div className='home__row'>
           {/* <h3>what we do</h3> */}
@@ -91,7 +105,7 @@ const IndexPage = () => {
           </ul>
           <Link className='home__cta-btn home__cta-btn--services' to='/services' title='see our available services'>
             our services &#8594;
-        </Link>
+          </Link>
         </div>
         <div className='about__container home__social'>
           <InstagramIcon />
@@ -101,11 +115,25 @@ const IndexPage = () => {
           </h3>
         </div>
 
-        <div className='home__section home__section--blog'>
-          <h3>the latest</h3>
+        <div className='home__row home__row--blog'>
+          <h3 style={{ marginBottom: 0 }}>the latest</h3>
+          <div key={wp.slug} className='blog-container blog-container--home' style={{ zIndex: 2 }} >
+            <Link className='blog' to={`/blog/${wp.slug}`}>
+              <h3>{wp.title}</h3>
+              <p className='blog__date'>{wp.date}</p>
+              <div className='blog__categories'>
+                {wp.categories.map(cat => <p className='modal__web-tag blog__tag'>{cat.name}</p>)}
+              </div>
+              <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} />
+            </Link>
+          </div>
+          <Link className='home__cta-btn home__cta-btn--blog' to='/blog' title='our blog'>
+            our blog &#8594;
+          </Link>
+
         </div>
+        <Footer size='big' />
       </div>
-      {/* <Footer /> */}
     </Layout>
   )
 }

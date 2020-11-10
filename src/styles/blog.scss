@@ -10,6 +10,10 @@
     height: 100%;
     @include flex(column, flex-start, center);
 
+    &--home {
+        justify-content: center;
+    }
+
     @media (max-width: 575.98px) {
         &::-webkit-scrollbar { width: 0 !important; }
     }

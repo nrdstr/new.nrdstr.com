@@ -50,6 +50,7 @@
     }
 
     &__social-cta {
+      padding: 20px 0;
 
       a {
         color: $blue;
@@ -76,6 +77,11 @@
         min-height: 200vh;
       }
 
+      &--blog {
+        background: linear-gradient(to bottom, $pink, $purple);
+        min-height: 100%;
+      }
+
       &::before {
         content: '';
         position: absolute;
@@ -86,7 +92,7 @@
         background-size: 200px 200px;
         mix-blend-mode: color-burn;
         opacity: .2;
-        z-index: 2;
+        z-index: 1;
       }
 
       h3 {
@@ -114,16 +120,16 @@
         @include size(100%, 100%);
         max-height: 448px;
 
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          @include size(100%, 100%);
-          background: radial-gradient(circle, $purple, transparent);
-          opacity: 0;
-          transition: all .2s ease-in-out;
-          z-index: -1;
-        }
+        // &::before {
+        //   content: '';
+        //   position: absolute;
+        //   top: 0;
+        //   @include size(100%, 100%);
+        //   background: radial-gradient(circle, $purple, transparent);
+        //   opacity: 0;
+        //   transition: all .2s ease-in-out;
+        //   z-index: -1;
+        // }
 
         &::after {
           content: '';
@@ -139,27 +145,27 @@
           transition: all .2s ease-in-out;
         }
 
-        &:nth-child(4),
-        &:nth-child(5),
-        &:nth-child(6) {
-          &::before {
-            background: radial-gradient(circle, $pink, transparent);
-          }
-        }
+        // &:nth-child(4),
+        // &:nth-child(5),
+        // &:nth-child(6) {
+        //   &::before {
+        //     background: radial-gradient(circle, $pink, transparent);
+        //   }
+        // }
 
-        @media (min-width: 769px) {
+        // @media (min-width: 769px) {
 
-          &:focus,
-          &:hover {
-            &::before {
-              opacity: 1;
-            }
+        //   &:focus,
+        //   &:hover {
+        //     &::before {
+        //       opacity: 1;
+        //     }
 
-            &::after {
-              opacity: .2;
-            }
-          }
-        }
+        //     &::after {
+        //       opacity: .2;
+        //     }
+        //   }
+        // }
       }
 
     }
@@ -223,7 +229,7 @@
         border-color: $blue;
       }
 
-      &--services {
+      &--services, &--blog {
         border-color: $blue;
         z-index: 2;
       }
