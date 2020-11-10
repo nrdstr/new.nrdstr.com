@@ -63,6 +63,7 @@
     }
 
     &__row {
+      position: relative;
       width: 100%;
       background-color: $purple;
       background: linear-gradient(to bottom, $purple, $pink);
@@ -73,6 +74,19 @@
 
       @media (max-height: 768px) {
         min-height: 200vh;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%, 100%);
+        background: url('/static.jpg') repeat center;
+        background-size: 200px 200px;
+        mix-blend-mode: color-burn;
+        opacity: .2;
+        z-index: 2;
       }
 
       h3 {
@@ -111,6 +125,20 @@
           z-index: -1;
         }
 
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include size(100%, 100%);
+          background: url('/static.jpg') repeat center;
+          background-size: 200px 200px;
+          mix-blend-mode: color-burn;
+          opacity: 0;
+          z-index: 1;
+          transition: all .2s ease-in-out;
+        }
+
         &:nth-child(4),
         &:nth-child(5),
         &:nth-child(6) {
@@ -125,6 +153,10 @@
           &:hover {
             &::before {
               opacity: 1;
+            }
+
+            &::after {
+              opacity: .2;
             }
           }
         }
@@ -193,6 +225,7 @@
 
       &--services {
         border-color: $blue;
+        z-index: 2;
       }
     }
 }

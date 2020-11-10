@@ -53,7 +53,10 @@ const IndexPage = () => {
 
       <div className='home-wrapper'>
         <div className='about__container animate--fade-in'>
-          <h2 className='about__title'><Logo color={'#151515'} /></h2>
+          <h2 className='about__title'>
+            <Logo color={'#151515'} />
+            <div className='about__texture' />
+          </h2>
           <p>
             we are a <strong>digital design</strong> agency that delivers graphic design, web design and development, advertising design, and many more <Link className='link' to='/services'>services</Link>. we enjoy good challenges to help push our creative limits further every day.
                                 </p>
