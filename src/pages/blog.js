@@ -9,22 +9,29 @@ const Blog = ({ data }) => {
 
   return (
     <Layout page='blog'>
-      <SEO title='nrdstr blog' description="Photoshop tutorials, social media features, photoshop texture and brush packs, coding tutorials, and more! The Nrstr blog offers all sorts of information, and sometimes opinions, on web tech and design" url='/blog' />
+      <SEO title='nrdstr blog' description="Photoshop tutorials, social media features, photoshop texture and brush packs, coding tutorials, and more! The Nrstr blog offers all sorts of information, and sometimes opinions, on web tech and design." url='/blog' />
       <div className='blog-wrapper animate--fade-in'>
         <h1 className='blog__heading'>n.blog</h1>
         {data.allWordpressPost.edges.map(({ node }) => {
           return (
-            <div key={node.slug} className='blog-container' >
-              <Link className='blog' to={node.slug}>
-                <h3>{node.title}</h3>
-                <p className='blog__date'>{node.date}</p>
-                <div className='blog__categories'>
-                  {node.categories.map(cat => <p className='modal__web-tag blog__tag'>{cat.name}</p>)}
-                </div>
-                <div className='blog__excerpt' dangerouslySetInnerHTML={{ __html: `${node.excerpt.slice(0, 210)}...</p>` }} />
-                <Link className='home__cta-btn home__cta-btn--pink' to={node.slug}>read more &#8594;</Link>
-              </Link>
-            </div>
+            <>
+              <div key={node.slug} className='blog-container' >
+                <Link className='blog' to={node.slug}>
+                  <h3>{node.title}</h3>
+                  <p className='blog__date'>{node.date}</p>
+                  <div className='blog__categories'>
+                    {node.categories.map(cat => <p className='modal__web-tag blog__tag'>{cat.name}</p>)}
+                  </div>
+                  <div className='blog__excerpt' dangerouslySetInnerHTML={{ __html: `${node.excerpt.slice(0, 210)}...<span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span></p>` }} />
+
+                  {/* <div className='home__cta-btn home__cta-btn--pink'>read more &#8594;</div> */}
+                  <div className='shape__container services__shape'>
+                    <div className='shape zig-zag divider' style={{ borderColor: 'rgb(241, 123, 165)' }} />
+                    <div className='shape zig-zag divider' style={{ marginLeft: 3, borderColor: 'rgb(241, 123, 165)' }} />
+                  </div>
+                </Link>
+              </div>
+            </>
           )
         })
         }
