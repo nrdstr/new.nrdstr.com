@@ -68,7 +68,7 @@
       width: 100%;
       background-color: $purple;
       background: linear-gradient(to bottom, $purple, $pink);
-      box-shadow: 0px 1px 16px 0px transparentize($pink, 0.4), 0px -1px 16px 0px transparentize($purple, 0.4);
+      box-shadow: 0px 1px 16px 0px transparentize($pink, 0.3), 0px -1px 16px 0px transparentize($purple, 0.3);
       // min-height: 100vh;
       // height: 100%;
       padding: 20px;
@@ -87,7 +87,7 @@
 
       &--blog {
         background: linear-gradient(to bottom, $pink, $purple);
-        box-shadow: 0px 1px 16px 0px transparentize($purple, 0.4), 0px -1px 16px 0px transparentize($pink, 0.4);
+        box-shadow: 0px 1px 16px 0px transparentize($purple, 0.3), 0px -1px 16px 0px transparentize($pink, 0.3);
         // min-height: 100%;
       }
 
@@ -130,52 +130,61 @@
         max-height: 448px;
         min-height: 300px;
 
-        // &::before {
-        //   content: '';
-        //   position: absolute;
-        //   top: 0;
-        //   @include size(100%, 100%);
-        //   background: radial-gradient(circle, $purple, transparent);
-        //   opacity: 0;
-        //   transition: all .2s ease-in-out;
-        //   z-index: -1;
-        // }
-
-        &::after {
+        &::before {
           content: '';
           position: absolute;
           top: 0;
-          left: 0;
           @include size(100%, 100%);
-          background: url('/static.jpg') repeat center;
-          background-size: 200px 200px;
-          mix-blend-mode: color-burn;
+          background: radial-gradient(circle, transparentize($purple, .5), transparent 90%);
           opacity: 0;
-          z-index: 1;
           transition: all .2s ease-in-out;
+          z-index: -1;
         }
 
-        // &:nth-child(4),
-        // &:nth-child(5),
-        // &:nth-child(6) {
-        //   &::before {
-        //     background: radial-gradient(circle, $pink, transparent);
-        //   }
+        // &::after {
+        //   content: '';
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   @include size(100%, 100%);
+        //   background: url('/static.jpg') repeat center;
+        //   background-size: 200px 200px;
+        //   mix-blend-mode: color-burn;
+        //   opacity: 0;
+        //   z-index: 1;
+        //   transition: all .2s ease-in-out;
         // }
 
-        // @media (min-width: 769px) {
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          &::before {
+            background: radial-gradient(circle, transparentize($pink, .5), transparent 90%);
+          }
+        }
 
-        //   &:focus,
-        //   &:hover {
-        //     &::before {
-        //       opacity: 1;
-        //     }
+        @media (min-width: 769px) {
 
-        //     &::after {
-        //       opacity: .2;
-        //     }
-        //   }
-        // }
+          p {
+            opacity: .85;
+            transition: all .2s ease-in-out;
+          }
+
+          &:focus,
+          &:hover {
+            &::before {
+              opacity: 1;
+            }
+
+            p {
+              opacity: 1;
+            }
+
+            // &::after {
+            //   opacity: .2;
+            // }
+          }
+        }
       }
 
     }

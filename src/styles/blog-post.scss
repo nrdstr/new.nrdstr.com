@@ -69,8 +69,9 @@
     h1 {
         transform: rotate(0);
         background: transparent;
-        color: white;
-        font-size: 7.4vw;
+        color: $white;
+        line-height: clamp(4rem, 7.4vw, 8rem);
+        font-size: clamp(4rem, 7.4vw, 8rem);
         text-align: left;
         font-weight: 900;
         margin: 0;
