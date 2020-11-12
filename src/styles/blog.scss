@@ -48,7 +48,7 @@
 
     .shape__container {
         position: relative;
-        padding: 40px 0 0 0;
+        padding: 20px 0;
     }
 
     .divider {
@@ -97,6 +97,7 @@
         width: 100%;
         transform: rotate(0);
         margin-bottom: 0;
+        transform: rotate(1deg);
         max-width: 680px;
         padding: 20px;
         margin-top: 10px;

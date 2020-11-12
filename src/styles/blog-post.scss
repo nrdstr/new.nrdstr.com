@@ -19,6 +19,10 @@
     }
 }
 
+#no-posts {
+    font-family: $font;
+}
+
 .blog-post-top {
     width: 100%;
     margin-top: 20px;
@@ -34,6 +38,16 @@
 
     *::selection {
         background: $pink;
+    }
+
+    &__social-share-container {
+        @include flex(row, flex-start, center);
+        width: 100%;
+        margin-bottom: 3px;
+    }
+
+    &__comments {
+        width: 100%;
     }
 
 
@@ -70,9 +84,11 @@
         transform: rotate(0);
         background: transparent;
         color: $white;
+        width: 100%;
         line-height: clamp(4rem, 7.4vw, 8rem);
         font-size: clamp(4rem, 7.4vw, 8rem);
         text-align: left;
+        padding: 7px 0;
         font-weight: 900;
         margin: 0;
     }
