@@ -241,6 +241,10 @@
       &--pink, &--contact {
         box-shadow: 0px 1px 16px 0px transparentize($pink, 0.6), inset 0px 1px 16px 0px transparentize($pink, 0.6);
       }
+
+      &--contact {
+        background-color: $pink;
+      }
     }
 }
 

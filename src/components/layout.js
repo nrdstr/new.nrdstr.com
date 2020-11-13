@@ -26,13 +26,15 @@ const Layout = ({ children, page, modalToggled }) => {
     const body = document.querySelector('body')
     if (menuToggled) {
       body.style.overflow = 'hidden'
-    } else {
-      body.style.overflow = ''
+    }
+
+    if (!menuToggled) {
+      body.style.overflow = 'auto'
     }
   }, [menuToggled])
 
   return (
-    <div className={`app ${menuToggled && 'no-scroll'}`}>
+    <div className={`app ${menuToggled ? 'no-scroll' : ''}`}>
       <div className='app__inner'>
         <TopBar modalToggled={modalToggled} handleMenuToggle={handleMenuToggle} />
         <main className={`main main__content main__${page}`}>
