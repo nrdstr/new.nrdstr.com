@@ -5,8 +5,9 @@ import NavLogo from './NavLogo'
 const TopBar = ({ handleMenuToggle, modalToggled }) => {
     const [scrolled, setScrolled] = useState(false)
 
-    const handleScroll = pos => {
-        const offset = document.documentElement.scrollTop
+    const handleScroll = () => {
+        const body = document.querySelector('body')
+        const offset = body.scrollTop
         if (offset <= 120) {
             setScrolled(false)
         } else {
@@ -15,11 +16,13 @@ const TopBar = ({ handleMenuToggle, modalToggled }) => {
     }
 
     useEffect(() => {
-        document.addEventListener('scroll', handleScroll)
+        const body = document.querySelector('body')
+        body.addEventListener('scroll', handleScroll)
     }, [])
 
     return (
-        <nav style={{ backgroundColor: scrolled ? `rgba(11,11,11,.96)` : `rgba(11,11,11,0)` }} className={`topbar ${modalToggled ? 'remove' : ''}`}>
+        <nav style={{ backgroundColor: scrolled ? `rgba(11,11,11,.96)` : `rgba(11,11,11,0)` }}
+            className={`topbar ${modalToggled ? 'remove' : ''}`}>
             <div className='topbar__inner'>
                 <NavLogo />
                 <div className='desktop'>
