@@ -40,7 +40,10 @@
     padding: 20px;
     cursor: pointer;
     transition: all .2s ease-in-out;
-    margin: 10px 0;
+
+    &:first-child {
+        margin-top: 10px;
+    }
 
     @media (max-width: 575.98px) {
         padding: 0;
@@ -48,40 +51,42 @@
 
     .shape__container {
         position: relative;
-        padding: 20px 0;
+        padding: 0;
     }
 
     .divider {
         border-color: $pink !important;
     }
 
-    &:focus,
-    &:hover {
-        background-color: $yellow;
+    @media (min-width: 769px) {
+        &:focus,
+        &:hover {
+            background-color: $yellow;
 
 
-        h3, p {
-            color: $black;
+            h3, p {
+                color: $black;
 
-            span {
-                color: $pink !important;
-                transition: all .2s ease-in-out;
+                span {
+                    color: $pink !important;
+                    transition: all .2s ease-in-out;
+                }
             }
-        }
 
-        .blog__date {
-            color: $pink !important;
-        }
+            .blog__date {
+                color: $pink !important;
+            }
 
-        .blog__tag {
-            background-color: $pink;
-            color: $white !important;
-        }
+            .blog__tag {
+                background-color: $pink;
+                color: $white !important;
+            }
 
-        .home__cta-btn {
-            background-color: $pink;
-            color: $black;
-            box-shadow: none;
+            .home__cta-btn {
+                background-color: $pink;
+                color: $black;
+                box-shadow: none;
+            }
         }
     }
 
@@ -122,10 +127,10 @@
     h3 {
         width: 100%;
         text-align: left;
-        color: white;
+        color: $white;
         font-family: $font;
-        font-size: clamp(4rem, 6vw, 5.5rem);
-        line-height: clamp(4rem, 6vw, 5.5rem);
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        line-height: clamp(3rem, 5vw, 4.7rem);
         margin: 0;
         margin-bottom: 6px;
         transition: all .2s ease-in-out;

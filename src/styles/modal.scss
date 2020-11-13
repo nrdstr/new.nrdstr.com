@@ -242,6 +242,7 @@
 
     &__web-tags {
         @include flex(row, center, center);
+        flex-wrap: wrap;
         margin: 7px 0;
         padding: 0;
 

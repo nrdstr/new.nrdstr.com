@@ -67,11 +67,9 @@ button {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   @include size(100%, 30px);
   @include flex(column, center, center);
+  padding-top: 10px;
 
   &--big {
     position: relative;
