@@ -1,0 +1,162 @@
+.blog-post-container {
+    overflow: hidden;
+    overflow-y: auto;
+    width: 100%;
+    @include flex(column, center, center);
+
+    @media (max-width: 575.98px) {
+        &::-webkit-scrollbar { width: 0 !important; }
+    }
+
+    &::-webkit-scrollbar { width: 0.7rem }
+
+    &::-webkit-scrollbar-track {
+        background-color: lighten($black, 5%);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $pink;
+    }
+}
+
+.blog__list-number {
+    position: relative;
+    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    margin: 40px 0 5px 0 !important;
+    color: $yellow !important;
+    padding-left: 5px;
+}
+
+#no-posts {
+    font-family: $font;
+}
+
+.blog-post-top {
+    width: 100%;
+    margin-top: 20px;
+    @include flex(row, flex-start, center);
+}
+
+.blog-post {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    max-width: 680px;
+    height: 100%;
+    padding-bottom: 30px;
+
+    *::selection {
+        background: $pink;
+    }
+
+    &__social-share-container {
+        @include flex(row, flex-start, center);
+        width: 100%;
+        margin-bottom: 3px;
+    }
+
+    &__content {
+        padding-bottom: 20px;
+    }
+
+    &__divider {
+        position: relative;
+        padding: 30px 0 40px 0;
+        margin: 0;
+
+        .divider {
+            border-color: $yellow !important;
+        }
+    }
+
+    &__comments {
+        width: 100%;
+        margin-bottom: 20px;
+
+        .comment-policy {
+            display: none;
+        }
+    }
+
+
+
+    &__back {
+        font-family: $font;
+        font-size: 1.1rem;
+        color: $blue;
+        font-weight: bold;
+        transition: all .2s ease-in-out;
+
+        &:focus,
+        &:hover {
+            color: $pink;
+        }
+    }
+
+    &__date {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        font-size: 1rem !important;
+        margin-bottom: 10px;
+    }
+
+    &__square {
+        display: inline-block;
+        @include size(5px, 5px);
+        margin: 0 5px 3px 5px;
+        background-color: $yellow;
+    }
+
+
+
+    h1 {
+        transform: rotate(0);
+        background: transparent;
+        color: $white;
+        width: 100%;
+        line-height: clamp(3rem, 7.4vw, 8rem);
+        font-size: clamp(3rem, 7.4vw, 8rem);
+        text-align: left;
+        padding: 7px 0;
+        font-weight: 900;
+        margin: 0;
+    }
+
+    p {
+        font-family: $font;
+        color: white;
+        font-size: 1.2rem;
+        margin-top: 7px;
+    }
+
+    figure {
+        margin: 0;
+        width: 100%;
+        max-width: 680px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    figcaption {
+        font-family: $font;
+        color: darken($white, 25%);
+        font-size: 0.9rem;
+        width: 100%;
+        text-align: left;
+        padding: 2px 0;
+    }
+
+    a {
+        color: $blue;
+        font-weight: bold;
+        transition: all .2s ease-in-out;
+
+        &:focus,
+        &:hover {
+            color: $pink;
+        }
+    }
+}

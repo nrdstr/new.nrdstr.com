@@ -1,3 +1,7 @@
+main {
+  padding: 0;
+}
+
 .main {
     position: relative;
     @include flex(column, flex-start, center);
@@ -32,11 +36,16 @@
 
     &__home {
       height: 100%;
-      border-left-color: $blue;
-      border-right-color: $yellow;
+      border-left-color: $yellow;
+      border-right-color: $blue;
       border-top-color: $pink;
       border-bottom-color: $purple;
       transition: all 0.466s ease-in-out;
+      padding: 100px 0 0 0;
+
+      @media (max-width: 575.98px) {
+        padding: 100px 0 0 0;
+      }
     }
 
     &__services {
@@ -44,7 +53,7 @@
       transition: all 0.466s ease-in-out;
     }
 
-    &__about {
+    &__about, &__blog, &__blog-post {
       @include flex(column, center, center);
       border-color: $pink !important;
       transition: all 0.466s ease-in-out;

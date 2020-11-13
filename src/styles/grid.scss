@@ -28,7 +28,7 @@
 
     &::-webkit-scrollbar-thumb {
         background-color: $purple;
-      }
+    }
 
       @media (max-width: 575.98px) {
         &::-webkit-scrollbar { width: 0 !important; opacity: 0; }

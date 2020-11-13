@@ -120,7 +120,7 @@ const Services = () => (
 
                 <div className='services__grid-item'>
                     <div className='services__grid-item-header'>
-                        <h3>advertising</h3>
+                        <h3>advertisement design</h3>
                         <div className='shape__container services__shape'>
                             <div className='shape zig-zag divider' />
                             <div className='shape zig-zag divider' style={{ marginLeft: 3 }} />

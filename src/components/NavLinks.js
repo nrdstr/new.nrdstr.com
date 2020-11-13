@@ -11,7 +11,7 @@ const NavLinks = () => {
                 <Link to='/services' className='nav-link color-1' activeClassName='nav-link--active'><span>services</span></Link>
             </li>
             <li>
-                <Link to='/about' className='nav-link color-3' activeClassName='nav-link--active'><span>about</span></Link>
+                <Link to='/blog' className='nav-link color-3' activeClassName='nav-link--active'><span>blog</span></Link>
             </li>
             <li>
                 <Link to='/contact' className='nav-link color-4' activeClassName='nav-link--active'><span>contact</span></Link>
