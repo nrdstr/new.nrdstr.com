@@ -68,7 +68,7 @@
       width: 100%;
       background-color: $purple;
       background: linear-gradient(to bottom, $purple, $pink);
-      box-shadow: 0px 1px 16px 0px transparentize($pink, 0.2), 0px -1px 16px 0px transparentize($purple, 0.2);
+      box-shadow: 0px 1px 11px 0px transparentize($pink, 0.2), 0px -1px 11px 0px transparentize($purple, 0.2);
       // min-height: 100vh;
       // height: 100%;
       padding: 20px;
@@ -87,7 +87,7 @@
 
       &--blog {
         background: linear-gradient(to bottom, $pink, $purple);
-        box-shadow: 0px 1px 16px 0px transparentize($purple, 0.2), 0px -1px 16px 0px transparentize($pink, 0.2);
+        box-shadow: 0px 1px 11px 0px transparentize($purple, 0.2), 0px -1px 11px 0px transparentize($pink, 0.2);
         // min-height: 100%;
       }
 

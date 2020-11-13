@@ -18,7 +18,7 @@ const IndexPage = () => {
           siteUrl
         }
       }
-      allWordpressPost(sort: { fields: [date] }) {
+      allWordpressPost(sort: { fields: [date], order: DESC  }) {
         edges {
           node {
             title
