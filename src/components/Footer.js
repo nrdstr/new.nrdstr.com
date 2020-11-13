@@ -25,7 +25,7 @@ const Footer = ({ size }) => {
                 </div>
                 <div className='footer__col'>
                     <Link className='home__cta-btn home__cta-btn--contact' to='/contact' title='contact us'>
-                        contact us &#8594;
+                        contact us
                 </Link>
                 </div>
             </div>

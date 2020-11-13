@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
 
 const Services = () => (
     <Layout page='services'>
@@ -24,15 +24,15 @@ const Services = () => (
                             <li>album and mixtape design</li>
                             <li>social media design</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/graphic-design' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
 
                 <div className='services__grid-item'>
                     <div className='services__grid-item-header'>
-                        <h3>website development</h3>
+                        <h3>website design</h3>
                         <div className='shape__container services__shape'>
                             <div className='shape zig-zag divider' />
                             <div className='shape zig-zag divider' style={{ marginLeft: 3 }} />
@@ -46,8 +46,8 @@ const Services = () => (
                             <li>modern website design</li>
                             <li>website hosting and maintenance</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/website-design' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
@@ -68,8 +68,8 @@ const Services = () => (
                             <li>website monitoring</li>
                             <li>website hosting</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/website-maintenance' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
@@ -90,8 +90,8 @@ const Services = () => (
                             <li>custom posts</li>
                             <li>advertisements</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/social-media-design' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
@@ -112,8 +112,8 @@ const Services = () => (
                             <li>music videos</li>
                             <li>advertisements</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/video-editing' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
@@ -134,8 +134,8 @@ const Services = () => (
                             <li>instagram ads</li>
                             <li>totally custom ads</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/ad-design' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>

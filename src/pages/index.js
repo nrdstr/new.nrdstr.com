@@ -79,28 +79,48 @@ const IndexPage = () => {
         </p>
           <Socials />
           <Link className='home__cta-btn home__cta-btn--pink' to='/contact' title='get a quote today'>
-            get a quote &#8594;
+            get a quote
         </Link>
           <h3 className='home__arrow-down desktop'>&#8595;</h3>
         </div>
         <div className='home__row home__row--services'>
           <ul className='home__grid'>
             <li>
-              <div className='icon icon--graphic-design' />
-              <p>graphic design</p>
+              <Link className='home__services-link' to='/services/graphic-design'>
+                <div className='icon icon--graphic-design' />
+                <p>graphic design</p>
+              </Link>
             </li>
             <li>
-              <div className='icon icon--website-design' />
-              <p>website design</p>
+              <Link className='home__services-link' to='/services/website-design'>
+                <div className='icon icon--website-design' />
+                <p>website design</p>
+              </Link>
             </li>
-            <li><div className='icon icon--website-maintenance' />
-              <p>website maintenance</p></li>
-            <li><div className='icon icon--sm-design' />
-              <p>social media design</p></li>
-            <li><div className='icon icon--video-editing' />
-              <p>video editing</p></li>
-            <li><div className='icon icon--ad-design' />
-              <p>advertisement design</p></li>
+            <li>
+              <Link className='home__services-link' to='/services/website-maintenance'>
+                <div className='icon icon--website-maintenance' />
+                <p>website maintenance</p>
+              </Link>
+            </li>
+            <li>
+              <Link className='home__services-link' to='/services/social-media-design'>
+                <div className='icon icon--social-media-design' />
+                <p>social media design</p>
+              </Link>
+            </li>
+            <li>
+              <Link className='home__services-link' to='/services/video-editing'>
+                <div className='icon icon--video-editing' />
+                <p>video editing</p>
+              </Link>
+            </li>
+            <li>
+              <Link className='home__services-link' to='/services/ad-design'>
+                <div className='icon icon--ad-design' />
+                <p>advertisement design</p>
+              </Link>
+            </li>
           </ul>
           <Link className='home__cta-btn home__cta-btn--services' to='/services' title='see our available services'>
             our services &#8594;
@@ -115,7 +135,7 @@ const IndexPage = () => {
         </div>
 
         <div className='home__row home__row--blog'>
-          <h3 style={{ marginBottom: 0, fontSize: '2rem' }}>the latest</h3>
+          <h3 style={{ marginBottom: 20, fontSize: '2rem', opacity: 0.9 }}>the latest</h3>
           <Link className='blog' to={`/blog/${wp.slug}`} style={{ zIndex: 2 }}>
             <h3>{wp.title}</h3>
             <p className='blog__date'>{wp.date}</p>
