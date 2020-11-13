@@ -122,7 +122,8 @@ const IndexPage = () => {
             <div className='blog__categories'>
               {wp.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
             </div>
-            <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} />
+            <div dangerouslySetInnerHTML={{ __html: `${wp.excerpt.slice(0, 213)}...<span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span></p>` }} />
+            {/* <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} /> */}
           </Link>
           <Link className='home__cta-btn home__cta-btn--blog' to='/blog' title='our blog'>
             our blog &#8594;

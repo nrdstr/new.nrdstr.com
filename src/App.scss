@@ -1,17 +1,39 @@
 @import './styles/base';
 
 html {
-  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+  @media (max-width: 768px) {
+    &::-webkit-scrollbar { width: 0 !important; }
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.7rem;
+    position: absolute;
+  }
+
+  &::-webkit-scrollbar-track {
+      background-color: lighten($black, 5%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: $blue;
+  }
 }
 
 body {
   margin: 0;
   background-color: $black;
-  overflow: hidden;
+  height: 100%;
+  min-height: 100%;
+  // overflow: hidden;
 }
 
 #root {
-  overflow: hidden;
+  position: relative;
+  height: 100%;
+  min-height: 100%;
 }
 
 ul,li {
@@ -44,19 +66,17 @@ button {
 }
 
 .app {
-  position: relative;
   @include flex(row, center, center);
-  @include size(100vw, 100vh);
+  @include size(100vw, 100%);
+  min-height: 100vh;
   background-color: $black;
   background: url('/background.jpg') repeat;
   background-position: 120% 50%;
   background-size: 684px 684px;
-  overflow: hidden;
 
   &__inner {
-    position: relative;
-    max-width: 1400px;
     @include size(100%, 100%);
+    min-height: 100vh;
     @include flex(column, center, center);
     box-sizing: border-box;
 
@@ -64,6 +84,8 @@ button {
       box-sizing: border-box;
     }
   }
+
+
 }
 
 .footer {
@@ -237,4 +259,8 @@ button {
   @media (min-width: 575.97px) {
     display: none;
   }
+}
+
+.no-scroll {
+  overflow: hidden !important;
 }

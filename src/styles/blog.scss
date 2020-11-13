@@ -1,22 +1,6 @@
 .blog-wrapper {
     @include flex(column, flex-start, center);
     @include size(100%, 100%);
-    overflow: hidden;
-    overflow-y: auto;
-
-    @media (max-width: 575.98px) {
-        &::-webkit-scrollbar { width: 0 !important; }
-    }
-
-    &::-webkit-scrollbar { width: 0.7rem }
-
-    &::-webkit-scrollbar-track {
-        background-color: lighten($black, 5%);
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: $pink;
-    }
 }
 
 .blog-container {
@@ -34,7 +18,7 @@
 .blog {
     @include flex(column, flex-start, center);
     width: 100%;
-    max-width: 680px;
+    max-width: 700px;
     background-color: transparent;
     position: relative;
     padding: 20px;
@@ -101,11 +85,29 @@
         font-weight: 700;
         width: 100%;
         transform: rotate(0);
+        box-shadow: 0px -1px 11px 0px transparentize($pink, 0.2);
         margin-bottom: 0;
         transform: rotate(1deg);
         max-width: 680px;
         padding: 20px;
         margin-top: 10px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include size(100%, 100%);
+            background: url('/static.jpg') repeat center;
+            background-size: 200px 200px;
+            mix-blend-mode: color-burn;
+            opacity: .2;
+            z-index: 1;
+
+            @media (max-width: 575.98px) {
+              background-size: 100px 100px;
+            }
+          }
 
         @media (max-width: 575.98px) {
             font-size: 4rem;

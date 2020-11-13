@@ -22,7 +22,7 @@ const Blog = ({ data }) => {
                 <div className='blog__categories'>
                   {node.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
                 </div>
-                <div className='blog__excerpt' dangerouslySetInnerHTML={{ __html: `${node.excerpt.slice(0, 215)}...<span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span></p>` }} />
+                <div className='blog__excerpt' dangerouslySetInnerHTML={{ __html: `${node.excerpt.slice(0, 235)}...<span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span></p>` }} />
                 <div className='shape__container services__shape'>
                   <div className='shape zig-zag divider' style={{ borderColor: 'rgb(241, 123, 165)' }} />
                   <div className='shape zig-zag divider' style={{ marginLeft: 3, borderColor: 'rgb(241, 123, 165)' }} />
