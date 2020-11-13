@@ -7,11 +7,12 @@ main {
     @include flex(column, flex-start, center);
     padding: 30px 20px;
     padding-bottom: 0;
-    border: 3px solid $purple;
     background-color: #151515;
     border-radius: $radius;
     box-sizing: border-box;
     width: 100%;
+    flex: 1;
+    padding-top: 100px;
     z-index: 1;
     transition: all 0.466s ease-in-out;
 
@@ -19,7 +20,7 @@ main {
       padding: 0;
       border-color: transparent !important;
       min-height: 0;
-      overflow: hidden;
+      // overflow: hidden;
     }
 
     &__logo {
@@ -29,17 +30,17 @@ main {
 
     &__content {
       height: 100%;
-      overflow: hidden;
+      // overflow: hidden;
       padding-top: 100px;
       background-color: transparentize(#151515, 0.13);
     }
 
     &__home {
       height: 100%;
-      border-left-color: $yellow;
-      border-right-color: $blue;
-      border-top-color: $pink;
-      border-bottom-color: $purple;
+      // border-left-color: $yellow;
+      // border-right-color: $blue;
+      // border-top-color: $pink;
+      // border-bottom-color: $purple;
       transition: all 0.466s ease-in-out;
       padding: 100px 0 0 0;
 
@@ -49,18 +50,18 @@ main {
     }
 
     &__services {
-      border-color: $yellow !important;
+      // border-color: $yellow !important;
       transition: all 0.466s ease-in-out;
     }
 
     &__about, &__blog, &__blog-post {
       @include flex(column, center, center);
-      border-color: $pink !important;
+      // border-color: $pink !important;
       transition: all 0.466s ease-in-out;
     }
 
     &__contact {
-      border-color: $blue;
+      // border-color: $blue;
       transition: all 0.466s ease-in-out;
     }
   }

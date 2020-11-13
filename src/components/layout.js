@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import NoShow from './NoShow'
 import Footer from './Footer'
@@ -22,8 +22,19 @@ const Layout = ({ children, page, modalToggled }) => {
 
   const handleMenuToggle = () => setMenuToggled(!menuToggled)
 
+  useEffect(() => {
+    const body = document.querySelector('body')
+    if (menuToggled) {
+      body.style.overflow = 'hidden'
+    }
+
+    if (!menuToggled) {
+      body.style.overflow = 'auto'
+    }
+  }, [menuToggled])
+
   return (
-    <Div100vh className='app'>
+    <div className={`app ${menuToggled ? 'no-scroll' : ''}`}>
       <div className='app__inner'>
         <TopBar modalToggled={modalToggled} handleMenuToggle={handleMenuToggle} />
         <main className={`main main__content main__${page}`}>
@@ -32,7 +43,7 @@ const Layout = ({ children, page, modalToggled }) => {
         <MobileMenu menuToggled={menuToggled} handleMenuToggle={handleMenuToggle} />
       </div>
       <NoShow />
-    </Div100vh>
+    </div>
   )
 }
 

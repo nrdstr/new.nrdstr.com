@@ -40,6 +40,10 @@
         background-size: 200px 200px;
         mix-blend-mode: color-burn;
         opacity: .3;
+
+        @media (max-width: 575.98px) {
+          background-size: 100px 100px;
+        }
       }
 
       &::after {

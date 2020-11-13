@@ -8,6 +8,12 @@ const Footer = ({ size }) => {
         return <footer className='footer footer--big animate--fade-in'>
             <h3>get a quote</h3>
             <p style={{ fontSize: '1rem', textAlign: 'center' }}>let's make your next project a <strong>nrdstr</strong> project.</p>
+            <div className='footer__divider'>
+                <div className='shape__container services__shape'>
+                    <div className='shape zig-zag divider' />
+                    <div className='shape zig-zag divider' style={{ marginLeft: 3 }} />
+                </div>
+            </div>
             <div className='row'>
                 <div className='footer__col'>
                     <div>
