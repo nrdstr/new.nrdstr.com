@@ -3,6 +3,14 @@
     @include flex(column, center, center);
     position: relative;
 
+    * {
+        text-transform: lowercase;
+
+        &::selection {
+            background-color: $purple;
+        }
+    }
+
     &__top {
         position: absolute;
         top: 0;
@@ -11,17 +19,18 @@
 
     &__title {
         @include flex(column, center, center);
-        font-size: clamp(3rem, 7vw, 7rem);
-        line-height: clamp(3rem, 7vw, 7rem);
+        font-size: clamp(3rem, 5vw, 5rem);
+        line-height: clamp(3rem, 5vw, 5rem);
         margin: 50px 0 25px 0;
-        padding: 20px;
+        padding: 40px 20px;
         transform: rotate(1deg);
-        max-width: 700px;
+        width: 100%;
+        max-width: 900px;
         color: $black--light;
         box-sizing: border-box;
         letter-spacing: -1px;
         background: linear-gradient(45deg, $purple, lighten($blue, 10%));
-        box-shadow: 0px 1px 11px 0px transparentize($purple, 0.5), 0px -1px 11px 0px transparentize(lighten($purple, 10%), 0.5);
+        box-shadow: 0px 1px 11px 0px transparentize($purple, 0.5), 0px -1px 11px 0px transparentize(lighten($blue, 10%), 0.5);
 
         &::before {
             content: '';
@@ -38,14 +47,77 @@
     }
 
     &__icon {
+        margin-bottom: 10px;
     }
 
     &__content {
+        max-width: 900px;
+
+        h2 {
+            font-family: $font;
+            color: $white;
+            font-size: clamp(2rem, 3.5rem, 5rem);
+            margin: 15px 0;
+        }
+
+        h3 {
+            font-family: $font;
+            color: $white;
+            font-style: italic;
+            font-size: clamp(1.5rem, 2rem, 2.5rem);
+            margin: 15px 0 0 0;
+            background-color: $purple;
+            padding: 5px;
+            color: $black;
+        }
+
+        h4 {
+            position: relative;
+            font-family: $font;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 10px 0 0 0;
+            padding-left: 10px;
+            color: $purple;
+
+            &::before {
+                position: absolute;
+                top: calc(50% - 2px);
+                left: 0;
+                content: '';
+                @include size(5px, 5px);
+                background-color: $yellow;
+            }
+        }
 
         p {
             font-family: $font;
             color: $white;
-            font-size: 1.1rem;
+            font-size: clamp(1.1rem, 1.3rem, 1.3rem);
+            margin: 15px 0;
+        }
+
+        a {
+            color: $blue;
+            font-family: $font;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all .2s ease-in-out;
+
+            &:focus,
+            &:hover {
+                color: $pink;
+            }
+        }
+    }
+
+    ul {
+
+        li {
+
+            p {
+                margin-top: 5px;
+            }
         }
     }
 }

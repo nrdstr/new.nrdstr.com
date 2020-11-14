@@ -12,8 +12,9 @@ body {
   margin: 0;
   background-color: $black;
   height: 100%;
+  width: 100%;
   min-height: 100%;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   @media (max-width: 768px) {
     &::-webkit-scrollbar { width: 0 !important; }
   }

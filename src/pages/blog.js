@@ -1,11 +1,16 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useEffect } from "react"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Footer from '../components/Footer'
 import SEO from "../components/seo"
 
 const Blog = ({ data }) => {
+
+  useEffect(() => {
+    const body = document.querySelector('body')
+    body.scrollTo(0, 0)
+  }, [])
 
   return (
     <Layout page='blog'>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Logo from '../components/Logo'
@@ -51,6 +51,11 @@ const IndexPage = () => {
     ]
   }
   const wp = data.allWordpressPost.edges[0].node
+
+  useEffect(() => {
+    const body = document.querySelector('body')
+    body.scrollTo(0, 0)
+  }, [])
   return (
     <Layout page='home'>
       <SEO title='nrdstr - modern graphic design and web design' schemaMarkup={schema} />

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -86,6 +86,11 @@ const Portfolio = () => {
             })
         }
     }
+
+    useEffect(() => {
+        const body = document.querySelector('body')
+        body.scrollTo(0, 0)
+    }, [])
 
     return (
         <>

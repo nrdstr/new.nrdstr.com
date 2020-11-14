@@ -52,6 +52,9 @@ const Contact = () => {
     useEffect(() => {
         const { name, email, message } = msg
 
+        const body = document.querySelector('body')
+        body.scrollTo(0, 0)
+
         if (name.length > 0 && email.length > 0 && message.length > 0 && emailIsValidated) {
             setDisabled(false)
         } else {
