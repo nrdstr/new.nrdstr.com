@@ -24,8 +24,8 @@ const description = `
         <p>What features would you like to see on your site? What kind of content do you want to see? What are some examples of existing websites that you like? It's good to identify what is absolutely required in the beginning rather than later. </p>
     </li>
     <li>
-        <h4>Current site</h4>
-        <p>If you have an existing site, we'll perform an audit to check your website's current design, features, performance, and SEO.</p>
+        <h4>Your Current site</h4>
+        <p>If you have an existing site, we'll check out its current design, features, performance, and SEO. any information that can be carried over to the new website, such as color schemes, graphics and images, or fonts will be noted here. </p>
     </li>
 </ul>
 
@@ -50,7 +50,7 @@ const description = `
 
 <h3>Development & Launch</h3>
 <p>Now the real fun begins. This is the longest part of the process, where we work on the site's layout, typography, icons, graphics, etc. We use the website wireframes as a guide to build you a functioning, fully responsive website.</p>
-<p>Once everything is coded and in place, we will spend some time testing the site across different browsers, devices, and network connections to make sure everything is as it should be. (Note: we do <strong>not</strong> test on <strong>Internet Explorer</strong> or most browsers older than a couple versions.</p>
+<p>Once everything is coded and in place, we will spend some time testing the site across different browsers, devices, and network connections to make sure everything is as it should be. <strong>Note</strong>: we do <strongNote:>not</strongNote:> test on <strong>Internet Explorer</strong> or most browsers older than a couple versions.</p>
 <p>After setting any dns records, redirects, 404's, and google web tags we'll deploy your new site to a live environment of your choosing! </p>
 
 <h3>What now?</h3>
