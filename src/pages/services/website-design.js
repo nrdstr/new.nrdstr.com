@@ -10,7 +10,7 @@ const description = `
     We’re not afraid to be different here at <strong>nrdstr</strong>, and we carry that mindset over to our work. We believe that pushing design norms to their limit is the new way forward. Pushing boundaries is what creates new normals, and we view website design and development in the same light.
 </p>
 <p>
-    Each and every web design project is unique. In order to create a website that acts as the perfect digital face for your brand, we need to get to know your brand. We want to understand your needs, and build a mutually agreed upon project design, plan, and timeline that suits your business.
+    Each and every web design project is unique. In order to create, or recreate, a website that acts as the perfect digital face for your brand, we need to get to know your brand. We want to understand your needs, and build a mutually agreed upon project design, plan, and timeline that suits your business.
 </p>
 <h2>How can we help you?</h2>
 <p style='margin-bottom: 20px;'>Our websites are fully responsive, blazing fast, and SEO friendly. We aim to deliver your project in the most efficient and communicative manner as possible. here's how our process typically works:</p>
