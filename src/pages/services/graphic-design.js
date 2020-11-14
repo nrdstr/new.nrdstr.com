@@ -7,7 +7,7 @@ import Service from '../../components/service'
 
 const description = `
 <p>
-    First impressions are everything. A good brand design could easily be a deal maker for prospective clients, and is a big part of what draws potential customers to your network. Developing a unique, professional image is essential to a successful marketing strategy.
+    First impressions are everything. A solid brand design is a <strong>massively</strong> important variable in what draws new users, customers, fans, etc. to your network. Developing a unique, reliable, and memorable image is <strong>essential</strong> to any and every successful marketing strategy.
 </p>
 <h3>
     Our graphic design services.
@@ -20,7 +20,7 @@ const description = `
     </li>
     <li>
         <h4>Albums and Mixtapes</h4>
-        <p>Have some new tracks coming out? Let us make you something that <strong>pops</strong>. We <em>are</em> musicians. Making kick ass art for other musicians is one of our favorite things to do!</p>
+        <p>Have new music coming out? Let us design you a cover that <strong>pops</strong>. We <em>are</em> musicians after all. Making kick ass art for other musicians is kind of our jam.</p>
     </li>
     <li>
         <h4>Social Media</h4>
