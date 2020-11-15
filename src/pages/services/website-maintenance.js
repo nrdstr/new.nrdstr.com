@@ -51,7 +51,7 @@ A website that is current and relevant has everything to do with how it ranks an
 
 const WebSiteMaintenance = () => (
     <Layout page='service-website-maintenance'>
-        <SEO title='website maintenance' description="" url='/services/website-maintenance' />
+        <SEO title='website maintenance' description="Our website maintenance service include options to upgrade, secure, and maximize your online presence with fresh, SEO rich content, in turn creating maximum exposure. We also offer website hosting and domain management at reasonable monthly rates. Contact us today!" url='/services/website-maintenance' />
         <Service type='website-maintenance' description={description} />
         <Link to='/contact' className='home__cta-btn home__cta-btn--contact' title='get a website maintainance quote'>get in touch</Link>
         <Footer />

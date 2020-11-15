@@ -114,17 +114,19 @@ const IndexPage = () => {
                 <p>social media design</p>
               </Link>
             </li>
-            <li>
-              <Link className='home__services-link' to='/services/video-editing'>
-                <div className='icon icon--video-editing' />
-                <p>video editing</p>
-              </Link>
-            </li>
+
             <li>
               <Link className='home__services-link' to='/services/ad-design'>
                 <div className='icon icon--ad-design' />
                 <p>advertisement design</p>
               </Link>
+            </li>
+
+            <li>
+              <button className='home__services-link' title='motion design - coming soon'>
+                <div className='icon icon--motion-design' />
+                <p>motion design</p>
+              </button>
             </li>
           </ul>
           <Link className='home__cta-btn home__cta-btn--services' to='/services' title='see our available services'>

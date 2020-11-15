@@ -19,7 +19,7 @@
 
     &__title {
         @include flex(column, center, center);
-        font-size: clamp(3rem, 5vw, 5rem);
+        font-size: clamp(3rem, 3.5rem, 4rem);
         line-height: clamp(3rem, 5vw, 5rem);
         margin: 50px 0 25px 0;
         padding: 40px 20px;
@@ -65,9 +65,10 @@
             color: $white;
             font-style: italic;
             font-size: clamp(1.5rem, 2rem, 2.5rem);
+            line-height: clamp(1.5rem, 2rem, 2.5rem);
             margin: 25px 0 0 0;
             background-color: $purple;
-            padding: 5px;
+            padding: 8px;
             color: $black;
         }
 
@@ -112,6 +113,11 @@
     }
 
     ul {
+
+        @media (max-width: 575.98px) {
+            margin: 0;
+            padding: 0;
+        }
 
         li {
 

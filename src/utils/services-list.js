@@ -24,9 +24,9 @@ export const serviceList = [
         description: '<p>html description</p>'
     },
     {
-        name: 'video editing',
-        slug: 'video-editing',
-        icon: '/services/video-editing.svg',
+        name: 'motion design',
+        slug: 'motion-design',
+        icon: '/services/motion-design.svg',
         description: '<p>html description</p>'
     },
     {

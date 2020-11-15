@@ -8,7 +8,7 @@ const TopBar = ({ handleMenuToggle, modalToggled }) => {
     const handleScroll = () => {
         const body = document.querySelector('body')
         const offset = body.scrollTop
-        if (offset <= 120) {
+        if (offset <= 50) {
             setScrolled(false)
         } else {
             setScrolled(true)
@@ -21,7 +21,7 @@ const TopBar = ({ handleMenuToggle, modalToggled }) => {
     }, [])
 
     return (
-        <nav style={{ backgroundColor: scrolled ? `rgba(11,11,11,.96)` : `rgba(11,11,11,0)` }}
+        <nav style={{ backgroundColor: scrolled ? `rgba(15,15,15,1)` : `rgba(11,11,11,0)` }}
             className={`topbar ${modalToggled ? 'remove' : ''}`}>
             <div className='topbar__inner'>
                 <NavLogo />

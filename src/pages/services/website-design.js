@@ -7,13 +7,13 @@ import Service from '../../components/service'
 
 const description = `
 <p>
-    We’re not afraid to be different here at <strong>nrdstr</strong>, and we carry that mindset over to our work. We believe that pushing design norms to their limit is the new way forward. Pushing boundaries is what creates new normals, and we view website design and development in the same light.
+    We’re not afraid to be different here at <strong>nrdstr</strong>, and we carry that mindset over to our work. We believe that taking design norms to their limit is the new way forward. Pushing boundaries is what creates new normals, and we view website design and development in the same light.
 </p>
 <p>
-    Each and every web design project is unique. In order to create, or recreate, a website that acts as the perfect digital face for your brand, we need to get to know your brand. We want to understand your needs, and build a mutually agreed upon project design, plan, and timeline that suits your business.
+    Each and every web design project is unique. In order to create, or recreate, a website that acts as the perfect digital face for your brand, we need to get to know your brand. We want to understand your needs, and build a mutually agreed upon project design, plan, and timeline that suits your business or project.
 </p>
 <h2>How can we help you?</h2>
-<p style='margin-bottom: 20px;'>Our websites are fully responsive, blazing fast, and SEO friendly. We aim to deliver your project in the most efficient and communicative manner as possible. here's how our process typically works:</p>
+<p style='margin-bottom: 20px;'>Our websites are fully responsive, blazing fast, and <strong>SEO strong</strong>. We aim to deliver your project in the most efficient and communicative manner as possible. here's how our process typically works:</p>
 
 <h3>Let's audit.</h3>
 <p>In this initial phase we'd like to get to know your brand and the goals and expectations of your new website. here's a couple of things we'll cover:</p>
@@ -31,7 +31,7 @@ const description = `
 
 
 <h3>To the drawing board.</h3>
-<p>Now it's time to plan and design. We will determine the structure of the site and create a plan:</p>
+<p>Time to design! We will determine the structure and layout of the site and create a plan:</p>
 
 <ul>
     <li>
@@ -40,11 +40,11 @@ const description = `
     </li>
     <li>
         <h4>Styles</h4>
-        <p>Before we can begin, we'll also have to make style decisions such as color palettes, fonts, font sizes, headings, etc. It is always helpful to include examples in this (<em>or any</em>) phase! </p>
+        <p>Before we can begin, we'll also have to make style decisions such as color palettes, fonts, font sizes, headings, etc. It is always helpful to include examples in this <em>or any</em> phase! </p>
     </li>
     <li>
         <h4>Wireframes</h4>
-        <p>This is where we begin to design your site. We'll use all of the design points decided upon to create a website blueprint. This is so you (and us) can see the design, the bigger picture, and make any changes before development begins. </p>
+        <p>This is where we'll begin to design your site. We'll use all of the gathered data and design requirements to create a website blueprint. This is so you (and we) can see the design, the bigger picture, and make any changes before development begins. </p>
     </li>
 </ul>
 
@@ -55,14 +55,14 @@ const description = `
 
 <h3>What now?</h3>
 <p>Your site is live, but maybe you want to keeps things fresh by adding content or changing up styles throughout the year.</p>
-<p>We offer <a id='link' href='/services/website-maintenance'>website maintenance</a> efforts as a monthly retainer program or as flat-rate prepraid time blocks. We want your business to succeed, and a great website is the strongest first digital step you can take to making that succeed.</p>
+<p>We offer <a id='link' href='/services/website-maintenance'>website maintenance</a> efforts as a monthly retainer program or as flat-rate prepraid time blocks. We want your business or project to succeed, and a great website is the strongest first digital step you can take to making that success happen.</p>
 
 
 `
 
 const WebSiteDesign = () => (
     <Layout page='service-website-design'>
-        <SEO title='website design' description="" url='/services/website-design' />
+        <SEO title='website design and development' description="We believe that taking web design norms to their limits is the new way forward. Pushing boundaries is what creates new normals, and we view website design and development in the same light. Let us build you a stunning, fast, and SEO strong website today!" url='/services/website-design' />
         <Service type='website-design' description={description} />
         <Link to='/contact' className='home__cta-btn home__cta-btn--contact' title='get a quote'>get a quote</Link>
         <Footer />

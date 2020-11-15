@@ -13,7 +13,7 @@ const description = `
 That's okay. What's important is appearances. More importantly, <em>uniform</em> appearances. You want your brand to be easily <strong>identifiable</strong> no matter the platform.
 </p>
 <p>
-    We'll design you complete social media skins, profile pictures, banners, backgrounds, and/or headers for your social media accounts. Let's make your brand look <em>legit</em> everywhere you can be found.
+    We'll design you social media skins, profile pictures, banners, backgrounds, and/or headers for your social media accounts. Let's make your brand look <em>legit</em> everywhere you can be found.
 </p>
 <h3>
     I don't have a brand yet.
@@ -23,7 +23,7 @@ That's okay. What's important is appearances. More importantly, <em>uniform</em>
 
 const SocialMediaDesign = () => (
     <Layout page='service-sm-design'>
-        <SEO title='social media design' description="" url='/services/social-media-design' />
+        <SEO title='social media design' description="We'll design you social media skins, profile pictures, banners, backgrounds, and  headers for your social media accounts. You want your brand to be easily identifiable no matter the platform, and we're here to help. Contact us today!" url='/services/social-media-design' />
         <Service type='social-media-design' description={description} />
         <Link to='/contact' className='home__cta-btn home__cta-btn--contact' title='get a quote'>get a quote</Link>
         <Footer />

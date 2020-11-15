@@ -26,7 +26,7 @@ const description = `
 
 const AdDesign = () => (
     <Layout page='service-ad-design'>
-        <SEO title='advertisement design' description="" url='/services/ad-design' />
+        <SEO title='advertisement design' description="From web ads to brochures and print ads, we want to design you advertisements that capture and compel target audiences to check out your products, services, or projects. Contact us today!" url='/services/ad-design' />
         <Service type='ad-design' description={description} />
         <Link to='/contact' className='home__cta-btn home__cta-btn--contact' title='get a quote'>get a quote</Link>
         <Footer />

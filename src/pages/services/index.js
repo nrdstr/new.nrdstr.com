@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../../components/layout"
+import Footer from '../../components/Footer'
 import SEO from "../../components/seo"
 
 const Services = () => (
@@ -96,27 +97,7 @@ const Services = () => (
                     </div>
                 </div>
 
-                <div className='services__grid-item'>
-                    <div className='services__grid-item-header'>
-                        <h3>video editing</h3>
-                        <div className='shape__container services__shape'>
-                            <div className='shape zig-zag divider' />
-                            <div className='shape zig-zag divider' style={{ marginLeft: 3 }} />
-                        </div>
-                    </div>
-                    <div className='services__grid-item-content'>
-                        <p>solidify your digital presence with our <strong>hand tailored</strong>&nbsp;videos.</p>
-                        <ul className='services__content'>
-                            <li>visualizer and lyric videos</li>
-                            <li>custom instagram stories</li>
-                            <li>music videos</li>
-                            <li>advertisements</li>
-                        </ul>
-                        <Link to='/services/video-editing' className='services__cta-btn'>
-                            learn more
-                        </Link>
-                    </div>
-                </div>
+
 
                 <div className='services__grid-item'>
                     <div className='services__grid-item-header'>
@@ -140,6 +121,31 @@ const Services = () => (
                     </div>
                 </div>
 
+                <div className='services__grid-item'>
+                    <div className='services__grid-item-header'>
+                        <h3>motion graphics design</h3>
+                        <div className='shape__container services__shape'>
+                            <div className='shape zig-zag divider' />
+                            <div className='shape zig-zag divider' style={{ marginLeft: 3 }} />
+                        </div>
+                    </div>
+                    <div className='services__grid-item-content'>
+                        <p>solidify your digital presence with our <strong>hand tailored</strong>&nbsp;motion graphics.</p>
+                        <ul className='services__content'>
+                            <li>visualizer and lyric videos</li>
+                            <li>custom instagram stories</li>
+                            <li>music videos and teasers</li>
+                            <li>advertisements</li>
+                        </ul>
+                        <button className='services__cta-btn services__cta-btn--disabled'>
+                            coming soon
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div className='mobile'>
+                <Footer />
             </div>
         </div>
     </Layout>
