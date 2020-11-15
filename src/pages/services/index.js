@@ -144,9 +144,6 @@ const Services = () => (
                 </div>
 
             </div>
-            <div className='mobile'>
-                <Footer />
-            </div>
         </div>
     </Layout>
 )
