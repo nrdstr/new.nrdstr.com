@@ -77,10 +77,10 @@ const IndexPage = () => {
             <div className='about__texture' />
           </h2>
           <p>
-            we are a <strong>digital design</strong> agency that delivers graphic design, web design and development, advertising design, and many more <Link className='link' to='/services'>services</Link>. we enjoy good challenges to help push our creative limits further every day.
+            we are a <strong>digital design</strong> agency that offers graphic design, website design and development, website maintenance, advertisement design, and many more <Link className='link' to='/services'>services</Link>.
                                 </p>
           <p style={{ margin: '20px 0' }}>
-            check out our <Link className='link' to='/portfolio'>portfolio</Link> to see some of our work. we'd be delighted to make your next project a <strong>nrdstr</strong> project!
+            check out our <Link className='link' to='/portfolio'>portfolio</Link> to see some of our work. let's make your next project a <strong>nrdstr</strong> project!
         </p>
           <Socials />
           <Link className='home__cta-btn home__cta-btn--pink' to='/contact' title='get a quote today'>
@@ -142,7 +142,7 @@ const IndexPage = () => {
         </div>
 
         <div className='home__row home__row--blog'>
-          <h3 style={{ marginBottom: 20, fontSize: '2rem', opacity: 0.9 }}>the latest</h3>
+          <h3 style={{ marginBottom: 20, fontSize: '2rem', opacity: 0.8 }}>the latest</h3>
           <Link className='blog' to={`/blog/${wp.slug}`} style={{ zIndex: 2 }}>
             <h3>{wp.title}</h3>
             <p className='blog__date'>{wp.date}</p>

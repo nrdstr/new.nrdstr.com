@@ -24,17 +24,17 @@ const Layout = ({ children, page, modalToggled }) => {
 
   useEffect(() => {
     const body = document.querySelector('body')
-    if (menuToggled) {
+    if (menuToggled || modalToggled) {
       body.style.overflow = 'hidden'
     }
 
-    if (!menuToggled) {
+    if (!menuToggled && !modalToggled) {
       body.style.overflow = 'auto'
     }
-  }, [menuToggled])
+  }, [menuToggled, modalToggled])
 
   return (
-    <div className={`app ${menuToggled ? 'no-scroll' : ''}`}>
+    <div className={`app`}>
       <div className='app__inner'>
         <TopBar modalToggled={modalToggled} handleMenuToggle={handleMenuToggle} />
         <main className={`main main__content main__${page}`}>

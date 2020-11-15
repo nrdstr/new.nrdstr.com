@@ -8,7 +8,7 @@ const TopBar = ({ handleMenuToggle, modalToggled }) => {
     const handleScroll = () => {
         const body = document.querySelector('body')
         const offset = body.scrollTop
-        if (offset <= 50) {
+        if (offset <= 20) {
             setScrolled(false)
         } else {
             setScrolled(true)

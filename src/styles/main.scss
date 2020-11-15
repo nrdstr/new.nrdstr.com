@@ -16,6 +16,23 @@ main {
     z-index: 1;
     transition: all 0.466s ease-in-out;
 
+    @media (max-width: 768px) {
+      &::-webkit-scrollbar { width: 0 !important; }
+    }
+
+    &::-webkit-scrollbar {
+    width: 0.7rem;
+    position: absolute;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: lighten($black, 5%);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $blue;
+    }
+
     &--init {
       padding: 0;
       border-color: transparent !important;
@@ -29,7 +46,8 @@ main {
     }
 
     &__content {
-      height: 100%;
+      width: 100%;
+      min-height: 100%;
       padding-top: 100px;
       background-color: transparentize(#151515, 0.13);
       padding-bottom: 40px;
@@ -64,8 +82,27 @@ main {
 
   .content {
     @include flex(column, flex-start, flex-start);
-    @include size(100%, 100%);
+    // @include size(100%, 100%);
+    width: 100%;
+    min-height: 100%;
     transition: all 0.2s ease-in-out;
+
+    @media (max-width: 768px) {
+      &::-webkit-scrollbar { width: 0 !important; }
+    }
+
+  &::-webkit-scrollbar {
+  width: 0.7rem;
+  position: absolute;
+  }
+
+  &::-webkit-scrollbar-track {
+      background-color: lighten($black, 5%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: $blue;
+  }
 
     &--show {
       opacity: 1;

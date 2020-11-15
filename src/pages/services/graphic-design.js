@@ -15,7 +15,7 @@ const description = `
 
 <ul>
     <li>
-        <h4>Logos and Branding</h4>
+        <h4>Logos</h4>
         <p>The front page of your brand. We want to design you a unique, memorable logo that sticks in the minds of your base audience.  </p>
     </li>
     <li>

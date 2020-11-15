@@ -51,6 +51,11 @@
 
     &__social-cta {
       padding: 20px 0;
+      font-family: $font;
+      color: $white;
+      font-weight: bold;
+      font-size: clamp(1.3rem, 1.5rem, 1.5rem);
+      margin: 15px 0;
 
       a {
         color: $blue;
@@ -179,7 +184,7 @@
     }
 
     &__arrow-down {
-      font-size: 3rem;
+      font-size: 1.7rem;
       color: white;
       position: absolute;
       margin: 0;

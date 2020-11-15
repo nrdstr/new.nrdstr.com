@@ -45,7 +45,7 @@ const Modal = props => {
                     </div>
                     <div className='column modal__web-container'>
                         <a className='modal__web-link' href={`https://${site[0].url}`} title={`https://${site[0].url}`}>
-                            {site[0].url} <ExternalLink />
+                            {site[0].url}
                         </a>
                         <div className='modal__web-tags'>
                             {site[0].tags.map(tag => {
@@ -72,8 +72,10 @@ const Modal = props => {
     }
 
     useEffect(() => {
+        const body = document.querySelector('body')
         if (props.toggled) {
-            modal.current.style.display = 'flex'
+            window.scrollTo(0, 0)
+            modal.current.style.display = 'block'
             setTimeout(() => {
                 modal.current.style.opacity = 1
             }, 10)
@@ -89,7 +91,7 @@ const Modal = props => {
 
 
     return (
-        <div ref={modal} className={`modal`}>
+        <div ref={modal} className={`modal ${props.tab === 'web' ? 'modal--web' : ''}`}>
             <div className='modal__top-bar'>
                 <button onClick={handleCloseModal} className='modal__close' />
             </div>

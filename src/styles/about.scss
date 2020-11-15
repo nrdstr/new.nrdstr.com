@@ -77,9 +77,9 @@
     &__container {
       position: relative;
       max-width: 700px;
-      color: $white;
-      font-size: 1.2rem;
-      font-family: $font;
+      // color: $white;
+      // font-size: 1.2rem;
+      // font-family: $font;
       margin-top: 50px;
       @include flex(column, center, center);
       width: 100%;
@@ -95,6 +95,27 @@
 
       .link {
         font-size: 1.2rem;
+      }
+
+      p {
+        font-family: $font;
+        color: $white;
+        font-size: clamp(1.1rem, 1.3rem, 1.3rem);
+        margin: 15px 0;
+
+        a {
+          color: $blue;
+          font-family: $font;
+          text-decoration: none;
+          font-size: clamp(1.1rem, 1.3rem, 1.3rem) !important;
+          font-weight: bold;
+          transition: all .2s ease-in-out;
+
+          &:focus,
+          &:hover {
+              color: $pink;
+          }
+        }
       }
 
       @media (max-width: 575.98px) {
