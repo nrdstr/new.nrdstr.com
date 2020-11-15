@@ -56,8 +56,7 @@ const description = `
 <h3>What now?</h3>
 <p>Your site is live, but maybe you want to keeps things fresh by adding content or changing up styles throughout the year.</p>
 <p>We offer <a id='link' href='/services/website-maintenance'>website maintenance</a> efforts as a monthly retainer program or as flat-rate prepraid time blocks. We want your business or project to succeed, and a great website is the strongest first digital step you can take to making that success happen.</p>
-
-
+<p><em>Note: we require a <strong>50%</strong> deposit upfront before any work is started.</em></p>
 `
 
 const WebSiteDesign = () => (
