@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Modal from '../components/Modal'
 import Grid from '../components/Grid'
+import Footer from '../components/Footer'
 import GridNav from '../components/GridNav'
 
 const Portfolio = () => {
@@ -99,6 +100,7 @@ const Portfolio = () => {
                 <GridNav handleGridNav={handleGridNav} activeTab={tab} tabs={['graphic', 'web']} />
                 <Grid tab={tab} data={images[tab]} handleToggleModal={handleToggleModal} />
                 <Modal handleModalPagination={handleModalPagination} toggled={modalToggle} data={modalData} handleToggleModal={handleToggleModal} tab={tab} />
+                <Footer />
             </Layout>
         </>
     )

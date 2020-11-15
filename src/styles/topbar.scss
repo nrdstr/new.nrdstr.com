@@ -12,7 +12,7 @@
     opacity: 1;
     transition: all .4s ease-in-out;
     align-items: center;
-    z-index: 2;
+    z-index: 7;
 
     &__inner {
         width: 100%;
@@ -31,7 +31,7 @@
     @include size(50px, 50px);
     @include flex(column, center, center);
     position: relative;
-    z-index: 2000;
+    z-index: 2;
 
     &__bar {
         @include size(100%, 6px);

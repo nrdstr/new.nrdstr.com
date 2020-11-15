@@ -7,10 +7,10 @@ import Service from '../../components/service'
 
 const description = `
 <p>
-    No matter the end goal, your site needs to be <strong>active</strong> and <strong>dynamic</strong>. It's surprising how often a great website looks and feels the same week after week, and month after month. Potential users, and customers, only spend a few seconds browsing your site before deciding whether or not to move on.
+    No matter the end goal, your site needs to be <strong>active</strong> and <strong>dynamic</strong>. It's surprising how often a great website looks and feels the same week after week, and month after month. Potential users and customers only spend a few seconds browsing your site before deciding whether or not to move on.
 </p>
 <p>
-Established users want a <strong>reliable and engaging digital experience</strong> every time they navigate to your website. A stagnant site shows a lack of one's passion for the subject and will drive your audience toward competition.
+Established users want a <strong>reliable and engaging digital experience</strong> every time they navigate to your website. A stagnant site shows a lack of one's passion for the subject and will drive your audience toward the competition.
 </p>
 <p>
 A website that is current and relevant has everything to do with how it ranks and how much traffic it receives. Our website maintenance services include options to maximize your online presence with fresh, <strong>SEO rich</strong> content, in turn creating maximum exposure.

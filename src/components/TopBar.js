@@ -22,7 +22,7 @@ const TopBar = ({ handleMenuToggle, modalToggled }) => {
 
     return (
         <nav style={{ backgroundColor: scrolled ? `rgba(15,15,15,1)` : `rgba(11,11,11,0)` }}
-            className={`topbar ${modalToggled ? 'remove' : ''}`}>
+            className={`topbar`}>
             <div className='topbar__inner'>
                 <NavLogo />
                 <div className='desktop'>
