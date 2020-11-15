@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Socials from '../components/Socials'
 import { NrdstrContactIcon } from '../icons/icons'
+import Footer from '../components/Footer'
 
 const Contact = () => {
     const [isDisabled, setDisabled] = useState(true)
@@ -113,6 +114,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
+            <Footer />
         </Layout>
     )
 }
