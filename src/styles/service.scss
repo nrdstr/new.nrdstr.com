@@ -20,7 +20,7 @@
     &__title {
         @include flex(column, center, center);
         font-size: clamp(3rem, 3.5rem, 4rem);
-        line-height: clamp(3rem, 5vw, 5rem);
+        line-height: clamp(3rem, 3.5rem, 4rem);
         margin: 50px 0 25px 0;
         padding: 40px 20px;
         transform: rotate(1deg);
@@ -44,6 +44,12 @@
             opacity: .2;
             z-index: 1;
           }
+
+          @media (max-width: 575.98px) {
+            font-size: clamp(2.5rem, 2.7rem, 4rem);
+            line-height: clamp(2.5rem, 2.7rem, 4rem);
+          }
+
     }
 
     &__icon {
