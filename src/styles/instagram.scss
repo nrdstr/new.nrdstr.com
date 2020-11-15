@@ -1,6 +1,12 @@
+.instagram-container {
+    @include flex(column, center, center);
+    width: 100%;
+    padding: 0 20px;
+}
+
 .instagram {
     width: 100%;
-    max-width: 700px;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 0;
@@ -9,7 +15,7 @@
     // box-shadow: 0px 0px 16px 0px transparentize($blue, .5);
 
     &__img {
-        max-width: 233px;
+        max-width: 333.33333px;
         width: 100%;
     }
 

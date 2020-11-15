@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import Footer from '../../components/Footer'
+import SEO from "../../components/seo"
 
 const Services = () => (
     <Layout page='services'>
@@ -24,15 +25,15 @@ const Services = () => (
                             <li>album and mixtape design</li>
                             <li>social media design</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/graphic-design' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
 
                 <div className='services__grid-item'>
                     <div className='services__grid-item-header'>
-                        <h3>website development</h3>
+                        <h3>website design</h3>
                         <div className='shape__container services__shape'>
                             <div className='shape zig-zag divider' />
                             <div className='shape zig-zag divider' style={{ marginLeft: 3 }} />
@@ -46,8 +47,8 @@ const Services = () => (
                             <li>modern website design</li>
                             <li>website hosting and maintenance</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/website-design' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
@@ -68,8 +69,8 @@ const Services = () => (
                             <li>website monitoring</li>
                             <li>website hosting</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/website-maintenance' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
@@ -90,33 +91,13 @@ const Services = () => (
                             <li>custom posts</li>
                             <li>advertisements</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/social-media-design' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
 
-                <div className='services__grid-item'>
-                    <div className='services__grid-item-header'>
-                        <h3>video editing</h3>
-                        <div className='shape__container services__shape'>
-                            <div className='shape zig-zag divider' />
-                            <div className='shape zig-zag divider' style={{ marginLeft: 3 }} />
-                        </div>
-                    </div>
-                    <div className='services__grid-item-content'>
-                        <p>solidify your digital presence with our <strong>hand tailored</strong>&nbsp;videos.</p>
-                        <ul className='services__content'>
-                            <li>visualizer and lyric videos</li>
-                            <li>custom instagram stories</li>
-                            <li>music videos</li>
-                            <li>advertisements</li>
-                        </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
-                        </Link>
-                    </div>
-                </div>
+
 
                 <div className='services__grid-item'>
                     <div className='services__grid-item-header'>
@@ -134,12 +115,37 @@ const Services = () => (
                             <li>instagram ads</li>
                             <li>totally custom ads</li>
                         </ul>
-                        <Link to='/contact' className='services__cta-btn'>
-                            get started
+                        <Link to='/services/ad-design' className='services__cta-btn'>
+                            learn more
                         </Link>
                     </div>
                 </div>
 
+                <div className='services__grid-item'>
+                    <div className='services__grid-item-header'>
+                        <h3>motion graphics design</h3>
+                        <div className='shape__container services__shape'>
+                            <div className='shape zig-zag divider' />
+                            <div className='shape zig-zag divider' style={{ marginLeft: 3 }} />
+                        </div>
+                    </div>
+                    <div className='services__grid-item-content'>
+                        <p>solidify your digital presence with our <strong>hand tailored</strong>&nbsp;motion graphics.</p>
+                        <ul className='services__content'>
+                            <li>visualizer and lyric videos</li>
+                            <li>custom instagram stories</li>
+                            <li>music videos and teasers</li>
+                            <li>advertisements</li>
+                        </ul>
+                        <button className='services__cta-btn services__cta-btn--disabled'>
+                            coming soon
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div className='mobile'>
+                <Footer />
             </div>
         </div>
     </Layout>

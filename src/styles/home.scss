@@ -39,6 +39,9 @@
     }
 
     &__social {
+      width: 100% !important;
+      max-width: 100% !important;
+      @include flex(column, center, center);
 
       svg {
         fill: white;
@@ -84,14 +87,10 @@
         left: 0;
         @include size(100%, 100%);
         background: url('/static.jpg') repeat center;
-        background-size: 200px 200px;
+        background-size: $grainSize;
         mix-blend-mode: color-burn;
         opacity: .2;
         z-index: 1;
-
-        @media (max-width: 575.98px) {
-          background-size: 100px 100px;
-        }
       }
 
       h3 {
@@ -246,6 +245,11 @@
         background-color: $pink;
       }
     }
+
+    &__services-link {
+      @include flex(column, center, center);
+      color: $white;
+    }
 }
 
 .logo__container {
@@ -279,13 +283,13 @@
     background-size: contain;
   }
 
-  &--sm-design {
-    background: url('/icons/services/sm-design.svg') no-repeat center;
+  &--social-media-design {
+    background: url('/icons/services/social-media-design.svg') no-repeat center;
     background-size: contain;
   }
 
-  &--video-editing {
-    background: url('/icons/services/video-editing.svg') no-repeat center;
+  &--motion-design {
+    background: url('/icons/services/motion-design.svg') no-repeat center;
     background-size: contain;
   }
 

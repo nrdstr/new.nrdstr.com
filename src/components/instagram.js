@@ -24,18 +24,18 @@ const Instagram = () => {
   const thumbnails = data.allInstaNode.edges.filter(t => t.node.mediaType === 'GraphImage')
   if (thumbnails) {
     return (
-      <>
+      <div className='instagram-container'>
         <div id='ig' className='instagram'>
 
           {
             thumbnails.reverse().slice(0, 18).map((thumb, i) => {
-              const src = thumb.node.thumbnails[1].src
+              const src = thumb.node.thumbnails[3].src
               return <img className='instagram__img animate--fade-in-fast' key={i} src={src} />
             })
           }
         </div>
         {/* <button onClick={handleLoadMorePosts} title='load more instagram posts' className='instagram__btn'>load more</button> */}
-      </>
+      </div>
     )
   } else {
     return (

@@ -30,17 +30,13 @@ main {
 
     &__content {
       height: 100%;
-      // overflow: hidden;
       padding-top: 100px;
       background-color: transparentize(#151515, 0.13);
+      padding-bottom: 40px;
     }
 
     &__home {
       height: 100%;
-      // border-left-color: $yellow;
-      // border-right-color: $blue;
-      // border-top-color: $pink;
-      // border-bottom-color: $purple;
       transition: all 0.466s ease-in-out;
       padding: 100px 0 0 0;
 
@@ -50,18 +46,17 @@ main {
     }
 
     &__services {
-      // border-color: $yellow !important;
+      padding-bottom: 0;
       transition: all 0.466s ease-in-out;
     }
 
     &__about, &__blog, &__blog-post {
       @include flex(column, center, center);
-      // border-color: $pink !important;
       transition: all 0.466s ease-in-out;
     }
 
     &__contact {
-      // border-color: $blue;
+      padding-bottom: 0;
       transition: all 0.466s ease-in-out;
     }
   }

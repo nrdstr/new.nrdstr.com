@@ -3,13 +3,24 @@
 html {
   height: 100%;
   min-height: 100%;
+  margin-left: calc(100vw - 100%);
+  overflow-x: hidden;
+
+}
+
+body {
+  margin: 0;
+  background-color: $black;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  // overflow-y: scroll;
   @media (max-width: 768px) {
     &::-webkit-scrollbar { width: 0 !important; }
   }
 
   &::-webkit-scrollbar {
     width: 0.7rem;
-    position: absolute;
   }
 
   &::-webkit-scrollbar-track {
@@ -19,14 +30,8 @@ html {
   &::-webkit-scrollbar-thumb {
       background-color: $blue;
   }
-}
 
-body {
-  margin: 0;
-  background-color: $black;
-  height: 100%;
-  min-height: 100%;
-  overflow: scroll;
+
 }
 
 #root {
@@ -91,6 +96,8 @@ button {
   @include size(100%, 30px);
   @include flex(column, center, center);
   padding-top: 10px;
+  position: absolute;
+  bottom: 5px;
 
 
   &__divider {
@@ -110,7 +117,7 @@ button {
   &--big {
     position: relative;
     height: 100%;
-    padding: 40px 20px 20px 20px;
+    padding: 40px 20px 5px 20px;
 
     .row {
       width: 100%;
@@ -251,6 +258,19 @@ button {
   &--fade-out {
     animation: fade-out .5s ease-in-out;
     animation-fill-mode: forwards;
+  }
+}
+
+.link__back-btn {
+  font-family: $font;
+  font-size: 1.1rem;
+  color: $blue;
+  font-weight: bold;
+  transition: all .2s ease-in-out;
+
+  &:focus,
+  &:hover {
+      color: $pink;
   }
 }
 
