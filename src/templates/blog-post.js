@@ -35,7 +35,6 @@ export default ({ data }) => {
   const content = useRef()
   const [featuredImg, setFeaturedImg] = useState('')
   const { readingTime } = useReadingTime(content)
-  console.log(data)
 
   const disqusConfig = {
     shortname: `nrdstr`,
