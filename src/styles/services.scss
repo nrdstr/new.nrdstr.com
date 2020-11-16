@@ -1,9 +1,5 @@
 .services {
-    @include flex(column, flex-start, center);
-    @include size(100%, 100%);
-    margin-bottom: 23px;
-    overflow-y: auto;
-    padding-right: 5px;
+    width: 100%;
 
     * {
         &::selection {

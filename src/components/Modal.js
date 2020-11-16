@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 // import YouTube from 'react-youtube-embed'
 import { ExternalLink } from '../icons/icons'
 import { webData } from '../utils/web'
+import { use100vh } from 'react-div-100vh'
 import Img from "gatsby-image"
 
 const Modal = props => {
@@ -89,9 +90,11 @@ const Modal = props => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.toggled, props.data])
 
+    const height = use100vh()
+
 
     return (
-        <div ref={modal} className={`modal ${props.tab === 'web' ? 'modal--web' : ''}`}>
+        <div ref={modal} style={{ height: height }} className={`modal ${props.tab === 'web' ? 'modal--web' : ''}`}>
             <div className='modal__top-bar'>
                 <button onClick={handleCloseModal} className='modal__close' />
             </div>

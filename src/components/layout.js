@@ -41,6 +41,7 @@ const Layout = ({ children, page, modalToggled }) => {
           {children}
         </main>
         <MobileMenu menuToggled={menuToggled} handleMenuToggle={handleMenuToggle} />
+        {/* <Footer /> */}
       </div>
       <NoShow />
     </div>

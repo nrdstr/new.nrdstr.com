@@ -43,6 +43,8 @@ export default ({ data }) => {
   }
 
   useEffect(() => {
+    const body = document.querySelector('body')
+    body.scrollTo(0, 0)
     if (post && content) setFeaturedImg(content.current.children[0].children[0].src)
   }, [post])
 

@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../../components/layout"
-import Footer from '../../components/Footer'
 import SEO from "../../components/seo"
 
 const Services = () => (
@@ -145,7 +144,6 @@ const Services = () => (
 
             </div>
         </div>
-        <Footer />
     </Layout>
 )
 
