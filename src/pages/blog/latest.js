@@ -16,7 +16,7 @@ const Latest = ({ data }) => {
 
     return (
         <Layout page='latest'>
-            <SEO title="nrdstr's latest post" description="Photoshop tutorials, social media features, photoshop texture and brush packs, coding tutorials, and more! The Nrstr blog offers all sorts of information, and sometimes opinions, on web tech and design." url='/blog/latest' />
+            <SEO title="nrdstr's latest post" description="Photoshop tutorials, art and social media features, photoshop texture and brush packs, coding tutorials, and more. The Nrstr blog offers all sorts of information, and sometimes opinions, on web tech and design." url='/blog/latest' />
             <div style={{ display: 'flex', flex: 1, alignItems: 'center' }} className='animate--fade-in'>
                 <p style={{ color: '#fefefe', fontSize: 'clamp(1.7rem, 3vw, 3rem)', fontFamily: 'Montserrat', fontWeight: 700 }}>getting the latest post!</p>
                 <Footer />
