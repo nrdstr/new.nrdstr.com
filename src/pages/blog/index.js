@@ -1,9 +1,9 @@
 import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Footer from '../components/Footer'
-import SEO from "../components/seo"
+import Layout from "../../components/layout"
+import Footer from '../../components/Footer'
+import SEO from "../../components/seo"
 
 const Blog = ({ data }) => {
 
