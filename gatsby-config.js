@@ -25,6 +25,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-tawk`,
+      options: {
+        tawkId: "5fb437631535bf152a56ff85",
+      },
+    },
+    {
       resolve: `gatsby-plugin-disqus`,
       options: {
         shortname: `nrdstr.disqus.com`
@@ -79,3 +85,7 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+
+
+
+
