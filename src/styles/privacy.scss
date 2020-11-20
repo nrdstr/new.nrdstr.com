@@ -1,0 +1,16 @@
+.privacy {
+
+    &__title {
+        background: transparent;
+        transform: rotate(0);
+        color: $white;
+        font-size: 3.5rem;
+        font-size: clamp(3rem, 10vw, 8rem);
+        margin: 0 0 10px 0;
+        text-align: left;
+
+        @media (max-width: 811px) {
+            width: 100%;
+        }
+    }
+}
