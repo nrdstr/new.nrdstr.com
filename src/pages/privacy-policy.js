@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
     }, [])
     return (
         <Layout page='privacy-policy'>
-            <SEO title="your privacy is important" description="" url='/about' />
+            <SEO title="your privacy is important" description="We generally try to keep privacy in mind when changing features on nrdstr.com. On this page you’ll find detailed information about..." url='/privacy-policy' />
             <div className='service privacy animate--fade-in'>
                 <div className='service__content'>
                     <h1 className='privacy__title'>Your privacy is important</h1>
