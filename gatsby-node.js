@@ -7,7 +7,12 @@ exports.createPages = async ({ graphql, actions }) => {
       allWordpressPost {
           edges {
             node {
-              author
+              author {
+                avatar_urls {
+                  wordpress_96
+                }
+                name
+              }
               content
               date(fromNow: true)
               title

@@ -8,7 +8,6 @@ export const useFetchWordpressData = () => {
         allWordpressPost {
         edges {
             node {
-            author
             content
             date(fromNow: true)
             title

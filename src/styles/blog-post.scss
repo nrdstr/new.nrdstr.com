@@ -22,7 +22,7 @@
 .blog__list-number {
     position: relative;
     font-size: clamp(2.8rem, 5vw, 3.5rem) !important;
-    margin: 40px 0 5px 0 !important;
+    margin: 20px 0 5px 0 !important;
     color: $yellow !important;
     padding-left: 5px;
 }
@@ -45,6 +45,11 @@
 
     *::selection {
         background: $pink;
+    }
+
+    &__author {
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     &__social-share-container {

@@ -5,29 +5,24 @@ import useReadingTime from 'use-reading-time'
 import { Link } from 'gatsby'
 import Footer from '../components/Footer'
 import { DiscussionEmbed } from 'disqus-react'
+import parse from 'html-react-parser'
+import PostImage from './blog-post-image'
 import SEO from '../components/seo'
 import {
   EmailShareButton,
   FacebookShareButton,
-  InstapaperShareButton,
   LinkedinShareButton,
   PinterestShareButton,
   RedditShareButton,
-  TelegramShareButton,
   TumblrShareButton,
   TwitterShareButton,
-  VKShareButton,
   FacebookIcon,
   TwitterIcon,
   LinkedinIcon,
   PinterestIcon,
-  VKIcon,
-  TelegramIcon,
-  WhatsappIcon,
   RedditIcon,
   TumblrIcon,
-  EmailIcon,
-  InstapaperIcon
+  EmailIcon
 } from "react-share"
 
 export default ({ data }) => {
@@ -36,15 +31,40 @@ export default ({ data }) => {
   const [featuredImg, setFeaturedImg] = useState('')
   const { readingTime } = useReadingTime(content)
 
+  // console.log(data.allWordpressWpMedia.edges[0].node.localFile.publicURL)
+
   const disqusConfig = {
     shortname: `nrdstr`,
     config: { identifier: post.slug, title: post.title, url: `https://nrdstr.com/blog/${post.slug}` },
   }
 
+  const getImage = node => {
+    if (node.name === 'img') {
+      return node
+    } else if (node.children != null) {
+      for (let index = 0; index < node.children.length; index++) {
+        let image = getImage(node.children[index])
+        if (image != null) return image
+      }
+    }
+  }
+
+  const replaceMedia = node => {
+    if (node.name === 'img') {
+      return <PostImage src={node.attribs.src} alt={node.attribs.alt} width={node.attribs.width} />
+    }
+    // if (node.name === 'p') {
+    //   const image = getImage(node)
+    //   if (image != null) {
+    //     return <PostImage src={image.attribs.src} alt={image.attribs.alt} width={image.attribs.width} />
+    //   }
+    // }
+  }
+
   useEffect(() => {
     const body = document.querySelector('body')
     body.scrollTo(0, 0)
-    if (post && content) setFeaturedImg(content.current.children[0].children[0].src)
+    // if (post && content) setFeaturedImg(content.current.children[0].children[0].src)
   }, [post])
 
   const schema = {
@@ -56,7 +76,7 @@ export default ({ data }) => {
     },
     "headline": post.title,
     "description": `${post.excerpt.slice(3, 300)}...`,
-    "image": featuredImg,
+    "image": data.allWordpressWpMedia.edges[0].node.localFile.publicURL,
     "author": {
       "@type": "Organization",
       "name": "nrdstr"
@@ -81,14 +101,15 @@ export default ({ data }) => {
         description={`${post.excerpt.slice(3, 350)}...`}
         url={`/blog/${post.slug}`}
         schemaMarkup={schema}
-        image={featuredImg} />
+        image={data.allWordpressWpMedia.edges[0].node.localFile.publicURL} />
       <div className='blog-post-container animate--fade-in'>
         <div className='blog-post-top'>
           <Link className='blog-post__back' to='/blog'>&#8592; back</Link>
         </div>
         <div className='blog-post'>
           <h1>{post.title}</h1>
-          {/* <p className='blog-post__author'>{post.author.name}</p> */}
+          <p className='blog-post__author'>- <strong>{post.author.name}</strong></p>
+
           <p className='blog-post__date'>{post.date} <span className='blog-post__square' /> <strong>{readingTime}</strong> min read</p>
           <div className='blog__categories'>
             {post.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
@@ -118,7 +139,9 @@ export default ({ data }) => {
               <EmailIcon size={iconSize} />
             </EmailShareButton>
           </div>
-          <div ref={content} className='blog-post__content' dangerouslySetInnerHTML={{ __html: post.content }} />
+
+          <div ref={content} className='blog-post__content'>{parse(post.content, { replace: replaceMedia })}</div>
+          {/* <div ref={content} className='blog-post__content' dangerouslySetInnerHTML={{ __html: post.content }} /> */}
           <div className='shape__container blog-post__divider'>
             <div className='shape zig-zag divider' style={{ borderColor: 'rgb(254, 254, 81)' }} />
             <div className='shape zig-zag divider' style={{ marginLeft: 3, borderColor: 'rgb(254, 254, 81)' }} />
@@ -137,6 +160,12 @@ export const query = graphql`
       edges {
         node {
           title
+          author {
+            avatar_urls {
+              wordpress_96
+            }
+            name
+          }
           content
           excerpt
           internal {
@@ -145,15 +174,18 @@ export const query = graphql`
           categories {
             name
           }
-          _links {
-            wp_featuredmedia {
-              href
-              embeddable
-            }
-          }
           slug
           date(formatString: "MM-DD-YYYY")
-          author
+        }
+      }
+    }
+    allWordpressWpMedia {
+      edges {
+        node {
+          source_url
+          localFile {
+            publicURL
+          }
         }
       }
     }
