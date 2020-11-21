@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 import Footer from '../../components/Footer'
@@ -15,7 +14,6 @@ const MotionDesign = () => (
     <Layout page='service-motion-design'>
         <SEO title='motion graphics design' description="" url='/services/motion-design' />
         <Service type='motion-design' description={description} />
-        {/* <Link to='/contact' className='home__cta-btn home__cta-btn--contact' title='get a quote'>get a quote</Link> */}
         <Footer />
     </Layout>
 )
