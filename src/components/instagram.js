@@ -1,8 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 const Instagram = () => {
-  const [totalPosts, setTotalPosts] = useState(9)
 
   const data = useStaticQuery(graphql`
       query FetchAllInstaNode {
@@ -19,14 +18,11 @@ const Instagram = () => {
       }
       `)
 
-  const handleLoadMorePosts = () => setTotalPosts(totalPosts + 9)
-
   const thumbnails = data.allInstaNode.edges.filter(t => t.node.mediaType === 'GraphImage')
   if (thumbnails) {
     return (
       <div className='instagram-container'>
         <div id='ig' className='instagram'>
-
           {
             thumbnails.reverse().slice(0, 18).map((thumb, i) => {
               const src = thumb.node.thumbnails[3].src
@@ -34,7 +30,6 @@ const Instagram = () => {
             })
           }
         </div>
-        {/* <button onClick={handleLoadMorePosts} title='load more instagram posts' className='instagram__btn'>load more</button> */}
       </div>
     )
   } else {

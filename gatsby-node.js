@@ -36,4 +36,15 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     })
   })
+
+  // await result.allFile.edges.filter(item => item.node.childImageSharp.fluid.originalName.includes('graphic-')).forEach(({ node }) => {
+  //   console.log()
+  //   createPage({
+  //     path: `/portfolio/graphic/${node.slug}`,
+  //     component: path.resolve(`./src/templates/blog-post.js`),
+  //     context: {
+  //       slug: node.slug,
+  //     }
+  //   })
+  // })
 }
