@@ -12,7 +12,7 @@ const description = `
 
 const MotionDesign = () => (
     <Layout page='service-motion-design'>
-        <SEO title='motion graphics design' description="" url='/services/motion-design' />
+        <SEO title='Motion graphics design' description="" url='/services/motion-design' />
         <Service type='motion-design' description={description} />
         <Footer />
     </Layout>

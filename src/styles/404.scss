@@ -1,0 +1,27 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    max-height: calc(100vh - 140px);
+    padding: 0 20px;
+    width: 100%;
+
+    h1 {
+        background: transparent;
+        color: $white;
+        transform: rotate(0);
+        width: 100%;
+        font-size: clamp(4rem,30vw, 20rem);
+        line-height: clamp(4rem,30vw, 20rem);
+        margin: 0;
+    }
+
+    p {
+        color: $white;
+        font-size: clamp(1.1rem, 1.3rem, 1.5rem);
+        font-family: $font;
+        margin: 0 0 0 10px;
+    }
+}

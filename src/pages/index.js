@@ -58,17 +58,7 @@ const IndexPage = () => {
   }, [])
   return (
     <Layout page='home'>
-      <SEO title='nrdstr - modern graphic design and web design' schemaMarkup={schema} />
-      {/* <div className='home animate--fade-in'>
-        <Logo color={'#fefefe'} />
-        <p className='home__description'>
-          we are a <strong>digital design</strong> agency that delivers graphic design, web design and development, advertising design, and many more <Link className='link' to='/services'>services</Link>.
-                            </p>
-        <Link className='home__cta-btn' to='/contact' title='see our available services'>
-          get a quote
-      </Link>
-        <Socials />
-      </div> */}
+      <SEO title='Nrdstr: Modern graphic design and web design services' schemaMarkup={schema} />
 
       <div className='home-wrapper'>
         <div className='about__container animate--fade-in'>

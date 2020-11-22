@@ -61,7 +61,7 @@ const description = `
 
 const WebSiteDesign = () => (
     <Layout page='service-website-design'>
-        <SEO title='website design and development' description="We believe that taking web design norms to their limits is the new way forward. Pushing boundaries is what creates new normals, and we view website design and development in the same light. Let us build you a stunning, fast, and SEO strong website today!" url='/services/website-design' />
+        <SEO title='Website design and development' description="We believe that taking web design norms to their limits is the new way forward. Pushing boundaries is what creates new normals, and we view website design and development in the same light. Let us build you a stunning, fast, and SEO strong website today!" url='/services/website-design' />
         <Service type='website-design' description={description} />
         <Link to='/contact' className='home__cta-btn home__cta-btn--contact' title='get a quote'>get a quote</Link>
         <Footer />

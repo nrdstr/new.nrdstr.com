@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `nrdstr digital design services`,
+    title: `Nrdstr Design Services`,
     description: `We offer modern graphic design and website design, SEO, website maintenance, social media design services and more. Contact us today to discuss your next web, creative, or marketing project.`,
-    author: `@nrdstr_`,
+    author: `nrdstr_`,
     siteUrl: `https://www.nrdstr.com`
   },
   plugins: [
