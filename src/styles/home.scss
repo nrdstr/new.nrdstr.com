@@ -74,14 +74,14 @@
       width: 100%;
       background-color: $purple;
       background: linear-gradient(to bottom, $purple, $pink);
-      box-shadow: 0px 1px 11px 0px transparentize($pink, 0.2), 0px -1px 11px 0px transparentize($purple, 0.2);
+      box-shadow: 0px 1px 11px 0px transparentize($pink, 0.2), 0px -1px 11px 0px transparentize($purple, 0.2), inset 0px 0px 6px 2px rgba(21,21,21,0.3);
       height: 100%;
       padding: 0 20px;
       @include flex(column, center, center);
 
       &--blog {
         background: linear-gradient(to bottom, $pink, $purple);
-        box-shadow: 0px 1px 11px 0px transparentize($purple, 0.2), 0px -1px 11px 0px transparentize($pink, 0.2);
+        box-shadow: 0px 1px 11px 0px transparentize($purple, 0.2), 0px -1px 11px 0px transparentize($pink, 0.2), inset 0px 0px 6px 2px rgba(21,21,21,0.3);
         padding: 20px;
       }
 
