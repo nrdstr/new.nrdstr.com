@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import useReadingTime from 'use-reading-time'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import BlogShareButtons from './blog-share-buttons'
 import Footer from '../components/Footer'
 import { DiscussionEmbed } from 'disqus-react'
@@ -44,9 +44,27 @@ export default ({ data }) => {
     // }
   }
 
+  const handleNavigate = (e, path) => {
+    e.preventDefault()
+    navigate(path)
+  }
+
   useEffect(() => {
     const body = document.querySelector('body')
     body.scrollTo(0, 0)
+    if (content.current.children) {
+      const video = document.querySelector('.wp-block-embed__wrapper')
+      if (video) video.children[0].classList.add('blog__video-iframe')
+
+      const links = content.current.querySelectorAll('#link')
+      if (links) {
+        links.forEach(link => {
+          const path = link.pathname
+          link.addEventListener('click', e => handleNavigate(e, path))
+        })
+      }
+    }
+
   }, [post])
 
   const schema = {

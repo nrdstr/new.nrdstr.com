@@ -164,3 +164,19 @@
         }
     }
 }
+
+
+.wp-block-embed__wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.blog__video-iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100% !important;
+    width: 100% !important;
+}
