@@ -119,6 +119,7 @@
     &__categories {
         width: 100%;
         @include flex(row, flex-start, center);
+        flex-wrap: wrap;
         margin: 0 0 7px 0;
     }
 
