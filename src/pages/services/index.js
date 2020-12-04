@@ -5,7 +5,7 @@ import SEO from "../../components/seo"
 
 const Services = () => (
     <Layout page='services'>
-        <SEO title='Our digital services' description="We offer a plethora of digital services, such as web design and development, graphic design, website maintenance and hosting, youtube videos, social media, design, and much more. Contact us today to discuss your next web, creative, or marketing project!" url='/services' />
+        <SEO title='Graphic Design Services, Web Design Services, and more.' description="We offer a plethora of digital services, such as web design and development, graphic design, website maintenance and hosting, youtube videos, social media, design, and much more. Contact us today to discuss your next web, creative, or marketing project!" url='/services' />
         <div className='services animate--fade-in'>
             <div className='services__grid'>
                 <div className='services__grid-item'>

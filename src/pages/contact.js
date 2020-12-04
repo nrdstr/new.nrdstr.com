@@ -91,7 +91,7 @@ const Contact = () => {
 
     return (
         <Layout page='contact'>
-            <SEO title="Contact" />
+            <SEO title="Let's talk! Contact us today" />
             <div className='contact animate--fade-in'>
                 <div className='contact__split'>
                     <NrdstrContactIcon success={messageSuccess} />

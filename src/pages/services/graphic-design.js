@@ -41,7 +41,7 @@ const description = `
 
 const GraphicDesign = () => (
     <Layout page='service-graphic-design'>
-        <SEO title='graphic design' description="Our graphic design services will take your project from boring and bland to visually stunning and engaging. Developing a unique, reliable, and memorable image is essential to any and every successful marketing strategy. Contact us today!" url='/services/graphic-design' />
+        <SEO title='Graphic Design Services' description="Our graphic design services will take your project from boring and bland to visually stunning and engaging. Developing a unique, reliable, and memorable image is essential to any and every successful marketing strategy. Contact us today!" url='/services/graphic-design' />
         <Service type='graphic-design' description={description} />
         <Link to='/contact' className='home__cta-btn home__cta-btn--contact' title='get a quote'>get a quote</Link>
         <Footer />

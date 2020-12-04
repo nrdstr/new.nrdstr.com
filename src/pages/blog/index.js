@@ -17,7 +17,7 @@ const Blog = ({ data }) => {
 
   return (
     <Layout page='blog'>
-      <SEO title='nrdstr blog' description="Photoshop tutorials, social media features, photoshop texture and brush packs, coding tutorials, and more! The Nrstr blog offers all sorts of information, and sometimes opinions, on web tech and design." url='/blog' />
+      <SEO title='Nrdstr Blog' description="Photoshop tutorials, social media features, photoshop texture and brush packs, coding tutorials, and more! The Nrstr blog offers all sorts of information, and sometimes opinions, on web tech and design." url='/blog' />
       <div className='blog-wrapper animate--fade-in'>
         <h1 className='blog__heading'>n.blog</h1>
         {data.allWordpressPost.edges.map(({ node }) => {
