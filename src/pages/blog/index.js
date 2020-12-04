@@ -1,11 +1,14 @@
 import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
-
+import Img from "gatsby-image"
 import Layout from "../../components/layout"
 import Footer from '../../components/Footer'
 import SEO from "../../components/seo"
 
 const Blog = ({ data }) => {
+
+  const media = data.allWordpressWpMedia.edges
+  // console.log(media)
 
   useEffect(() => {
     const body = document.querySelector('body')
@@ -18,11 +21,28 @@ const Blog = ({ data }) => {
       <div className='blog-wrapper animate--fade-in'>
         <h1 className='blog__heading'>n.blog</h1>
         {data.allWordpressPost.edges.map(({ node }) => {
+          let featured
+          media.map(m => {
+            if (m.node.title === node.title) {
+              featured = <Img
+                fluid={m.node.localFile.childImageSharp.fluid}
+                alt={m.node.title}
+                style={{
+                  width: '100%',
+                  maxWidth: '100%',
+                  margin: '7px 0'
+                }} />
+            }
+          })
+          // console.log(featured)
           return (
             <div key={node.slug} className='blog-container' >
               <Link className='blog' to={node.slug}>
 
                 <h3>{node.title}</h3>
+                {
+                  featured && featured
+                }
                 <p className='blog__date'>{node.date}</p>
                 <div className='blog__categories'>
                   {node.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
@@ -57,6 +77,22 @@ export const pageQuery = graphql`
           content
           categories {
             name
+          }
+        }
+      }
+    }
+    allWordpressWpMedia {
+      edges {
+        node {
+          source_url
+          title
+          localFile {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }

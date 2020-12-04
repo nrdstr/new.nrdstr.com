@@ -14,7 +14,11 @@ export default ({ data }) => {
   const post = data.allWordpressPost.edges[0].node
   const content = useRef()
   const { readingTime } = useReadingTime(content)
-  const featuredImg = data.allWordpressWpMedia.edges[0].node.localFile.publicURL
+  let featuredImg
+
+  data.allWordpressWpMedia.edges.map(m => {
+    if (m.node.title === post.title) featuredImg = m.node.localFile.publicURL
+  })
 
   const disqusConfig = {
     shortname: `nrdstr`,
@@ -163,6 +167,7 @@ export const query = graphql`
       edges {
         node {
           source_url
+          title
           localFile {
             publicURL
           }
