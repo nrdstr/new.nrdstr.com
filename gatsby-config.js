@@ -25,6 +25,15 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat\:300,400,500,700,900`
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: `gatsby-plugin-tawk`,
       options: {
         tawkId: "5fb437631535bf152a56ff85",
