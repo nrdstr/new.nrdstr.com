@@ -8,7 +8,6 @@ import SEO from "../../components/seo"
 const Blog = ({ data }) => {
 
   const media = data.allWordpressWpMedia.edges
-  // console.log(media)
 
   useEffect(() => {
     const body = document.querySelector('body')
@@ -34,7 +33,6 @@ const Blog = ({ data }) => {
                 }} />
             }
           })
-          // console.log(featured)
           return (
             <div key={node.slug} className='blog-container' >
               <Link className='blog' to={node.slug}>

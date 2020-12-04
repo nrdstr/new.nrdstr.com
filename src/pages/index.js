@@ -79,7 +79,6 @@ const IndexPage = () => {
       let vid = wp.content.substring(opening, closing + 9)
       if (vid) {
         setBlogVid(vid)
-        console.log(video)
         if (video) video.children[0].classList.add('blog__video-iframe')
       }
     }
