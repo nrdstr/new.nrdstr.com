@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Logo from '../components/Logo'
@@ -23,6 +23,7 @@ const IndexPage = () => {
           node {
             title
             excerpt
+            content
             slug
             date(formatString: "MM-DD-YYYY")
             categories {
@@ -31,9 +32,21 @@ const IndexPage = () => {
           }
         }
       }
+      allWordpressWpMedia {
+        edges {
+          node {
+            source_url
+            localFile {
+              publicURL
+            }
+          }
+        }
+      }
     }
     `
   )
+  const [blogVid, setBlogVid] = useState()
+  const content = useRef()
   const schema = {
     "@context": "https://schema.org",
     "@type": "Corporation",
@@ -54,8 +67,24 @@ const IndexPage = () => {
 
   useEffect(() => {
     const body = document.querySelector('body')
+    const video = document.querySelector('.blog__vid')
     body.scrollTo(0, 0)
-  }, [])
+    if (wp.content) {
+      // const video = document.querySelector('.wp-block-embed__wrapper')
+      // if (video) {
+      //   video.children[0].classList.add('blog__video-iframe')
+      // }
+      const opening = wp.content.search('<iframe')
+      const closing = wp.content.search('</iframe>')
+      let vid = wp.content.substring(opening, closing + 9)
+      if (vid) {
+        setBlogVid(vid)
+        console.log(video)
+        if (video) video.children[0].classList.add('blog__video-iframe')
+      }
+    }
+
+  }, [data.allWordpressPost, content, blogVid])
   return (
     <Layout page='home'>
       <SEO title='Nrdstr: Modern graphic design and web design services' schemaMarkup={schema} />
@@ -139,6 +168,7 @@ const IndexPage = () => {
             <div className='blog__categories'>
               {wp.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
             </div>
+            {blogVid && <div ref={content} className='blog__vid-wrapper' dangerouslySetInnerHTML={{ __html: `<div class='blog__vid'>${blogVid}</div>` }} />}
             <div dangerouslySetInnerHTML={{ __html: `${wp.excerpt.slice(0, 213)}...<span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span></p>` }} />
             {/* <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} /> */}
           </Link>
