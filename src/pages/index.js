@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Logo from '../components/Logo'
 import Socials from '../components/Socials'
-import Instagram from '../components/instagram'
+// import Instagram from '../components/instagram'
 import { InstagramIcon } from '../icons/icons'
 import Footer from '../components/Footer'
 import SEO from "../components/seo"

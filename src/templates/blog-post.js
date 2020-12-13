@@ -58,7 +58,8 @@ export default ({ data }) => {
     body.scrollTo(0, 0)
     if (content.current.children) {
       const video = document.querySelector('.wp-block-embed__wrapper')
-      if (video) video.children[0].classList.add('blog__video-iframe')
+      console.log(video)
+      if (video.children) video.children[0].classList.add('blog__video-iframe')
 
       const links = content.current.querySelectorAll('#link')
       if (links) {
