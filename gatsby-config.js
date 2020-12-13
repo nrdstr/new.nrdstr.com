@@ -18,12 +18,12 @@ module.exports = {
         includeInDevelopment: false
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `39861700812`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     username: `39861700812`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

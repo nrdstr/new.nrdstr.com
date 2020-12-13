@@ -3,20 +3,20 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Instagram = () => {
 
-  const data = useStaticQuery(graphql`
-      query FetchAllInstaNode {
-        allInstaNode(sort: { fields: timestamp, order: ASC }) {
-          edges {
-            node {
-              thumbnails {
-                src
-              }
-              mediaType
-            }
-          }
-        }
-      }
-      `)
+  // const data = useStaticQuery(graphql`
+  //     query FetchAllInstaNode {
+  //       allInstaNode(sort: { fields: timestamp, order: ASC }) {
+  //         edges {
+  //           node {
+  //             thumbnails {
+  //               src
+  //             }
+  //             mediaType
+  //           }
+  //         }
+  //       }
+  //     }
+  //     `)
 
   const thumbnails = data.allInstaNode.edges.filter(t => t.node.mediaType === 'GraphImage')
   if (thumbnails) {
