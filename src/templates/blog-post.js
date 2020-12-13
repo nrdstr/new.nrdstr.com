@@ -103,7 +103,7 @@ export default ({ data }) => {
   return (
     <Layout page='blog-post'>
       <SEO title={post.title}
-        description={`${post.excerpt.slice(3, 300)}...`}
+        description={`${post.excerpt.slice(3, 300)}`}
         url={`/blog/${post.slug}`}
         schemaMarkup={schema}
         image={featuredImg} />
