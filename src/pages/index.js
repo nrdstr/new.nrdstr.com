@@ -71,7 +71,7 @@ const IndexPage = () => {
     body.scrollTo(0, 0)
     if (wp.content) {
       // const video = document.querySelector('.wp-block-embed__wrapper')
-      // if (video) {sdfsdfsdfsdf
+      // if (video) {
       //   video.children[0].classList.add('blog__video-iframe')
       // }
       const opening = wp.content.search('<iframe')
