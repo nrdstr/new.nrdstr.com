@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Logo from '../components/Logo'
 import Socials from '../components/Socials'
-// import Instagram from '../components/instagram'
+import Instagram from '../components/instagram'
 import { InstagramIcon } from '../icons/icons'
 import Footer from '../components/Footer'
 import SEO from "../components/seo"
@@ -86,7 +86,6 @@ const IndexPage = () => {
     }
 
   }, [data.allWordpressPost, content, blogVid])
-  console.log(blogVid)
   return (
     <Layout page='home'>
       <SEO title='Nrdstr: Modern graphic design and web design services' schemaMarkup={schema} />
@@ -156,7 +155,7 @@ const IndexPage = () => {
         </div>
         <div className='about__container home__social'>
           <InstagramIcon />
-          {/* <Instagram /> */}
+          <Instagram />
           <h3 className='home__social-cta'>
             want to see more? follow us on <a href='https://instagram.com/nrdstr_' title='nrdstr on instagram'>instagram</a>.
           </h3>
@@ -170,7 +169,7 @@ const IndexPage = () => {
             <div className='blog__categories'>
               {wp.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
             </div>
-            {/* {blogVid ? <div ref={content} className='blog__vid-wrapper' dangerouslySetInnerHTML={{ __html: `<div class='blog__vid'>${blogVid}</div>` }} /> : null} */}
+            {blogVid ? <div ref={content} className='blog__vid-wrapper' dangerouslySetInnerHTML={{ __html: `<div class='blog__vid'>${blogVid}</div>` }} /> : null}
             <div dangerouslySetInnerHTML={{ __html: `${wp.excerpt.slice(0, 300)} <span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span></p>` }} />
             {/* <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} /> */}
           </Link>
