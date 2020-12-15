@@ -45,7 +45,7 @@ const IndexPage = () => {
     }
     `
   )
-  const [blogVid, setBlogVid] = useState()
+  const [blogVid, setBlogVid] = useState(null)
   const content = useRef()
   const schema = {
     "@context": "https://schema.org",
@@ -76,14 +76,18 @@ const IndexPage = () => {
       // }
       const opening = wp.content.search('<iframe')
       const closing = wp.content.search('</iframe>')
-      let vid = wp.content.substring(opening, closing + 9)
-      if (vid) {
-        setBlogVid(vid)
-        if (video) video.children[0].classList.add('blog__video-iframe')
+      if (opening >= 0 && closing >= 0) {
+        let vid = wp.content.substring(opening, closing + 9)
+        if (vid) {
+          console.log(closing)
+          setBlogVid(vid)
+          if (video && video.children) video.children[0].classList.add('blog__video-iframe')
+        }
       }
     }
 
   }, [data.allWordpressPost, content, blogVid])
+  console.log(blogVid)
   return (
     <Layout page='home'>
       <SEO title='Nrdstr: Modern graphic design and web design services' schemaMarkup={schema} />
@@ -167,7 +171,7 @@ const IndexPage = () => {
             <div className='blog__categories'>
               {wp.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
             </div>
-            {blogVid && <div ref={content} className='blog__vid-wrapper' dangerouslySetInnerHTML={{ __html: `<div class='blog__vid'>${blogVid}</div>` }} />}
+            {/* {blogVid ? <div ref={content} className='blog__vid-wrapper' dangerouslySetInnerHTML={{ __html: `<div class='blog__vid'>${blogVid}</div>` }} /> : null} */}
             <div dangerouslySetInnerHTML={{ __html: `${wp.excerpt.slice(0, 300)} <span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span></p>` }} />
             {/* <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} /> */}
           </Link>
