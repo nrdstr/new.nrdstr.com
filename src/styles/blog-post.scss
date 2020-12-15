@@ -47,9 +47,44 @@
         background: $pink;
     }
 
+    h4 {
+        position: relative;
+        font-family: $font;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 10px 0 0 0;
+        color: $purple;
+
+        // &::before {
+        //     position: absolute;
+        //     top: calc(50% - 2px);
+        //     left: 0;
+        //     content: '';
+        //     @include size(5px, 5px);
+        //     background-color: $yellow;
+        // }
+    }
+
     &__author {
         width: 100%;
         margin-bottom: 0;
+    }
+
+    li {
+        position: relative;
+        font-family: $font;
+        color: $white;
+        font-size: clamp(1.1rem, 1.3rem, 1.3rem);
+        margin: 15px 0;
+
+        &::before {
+            position: absolute;
+            top: 7.5px;
+            left: -15px;
+            content: '';
+            @include size(5px, 5px);
+            background-color: $yellow;
+        }
     }
 
     &__social-share-container {
