@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
+import Img from "gatsby-image"
 import Logo from '../components/Logo'
 import Socials from '../components/Socials'
 import Instagram from '../components/instagram'
@@ -36,8 +37,14 @@ const IndexPage = () => {
         edges {
           node {
             source_url
+            title
             localFile {
               publicURL
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
@@ -64,16 +71,13 @@ const IndexPage = () => {
     ]
   }
   const wp = data.allWordpressPost.edges[0].node
+  const media = data.allWordpressWpMedia.edges
 
   useEffect(() => {
     const body = document.querySelector('body')
     const video = document.querySelector('.blog__vid')
     body.scrollTo(0, 0)
     if (wp.content) {
-      // const video = document.querySelector('.wp-block-embed__wrapper')
-      // if (video) { edit
-      //   video.children[0].classList.add('blog__video-iframe')
-      // }
       const opening = wp.content.search('<iframe')
       const closing = wp.content.search('</iframe>')
       if (opening >= 0 && closing >= 0) {
@@ -86,6 +90,23 @@ const IndexPage = () => {
     }
 
   }, [data.allWordpressPost, content, blogVid])
+
+  const FeaturedBlogImg = () => {
+    let featured
+    media.map(m => {
+      if (m.node.title === wp.title) {
+        featured = <Img
+          fluid={m.node.localFile.childImageSharp.fluid}
+          alt={m.node.title}
+          style={{
+            width: '100%',
+            maxWidth: '100%',
+            margin: '7px 0'
+          }} />
+      }
+    })
+    return featured
+  }
   return (
     <Layout page='home'>
       <SEO title='Nrdstr: Modern graphic design and web design services' schemaMarkup={schema} />
@@ -169,9 +190,10 @@ const IndexPage = () => {
             <div className='blog__categories'>
               {wp.categories.map(cat => <p key={cat.name} className='modal__web-tag blog__tag'>{cat.name}</p>)}
             </div>
-            {blogVid ? <div ref={content} className='blog__vid-wrapper' dangerouslySetInnerHTML={{ __html: `<div class='blog__vid'>${blogVid}</div>` }} /> : null}
-            <div dangerouslySetInnerHTML={{ __html: `${wp.excerpt.slice(0, 300)} <span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span></p>` }} />
-            {/* <div dangerouslySetInnerHTML={{ __html: wp.excerpt }} /> */}
+
+
+            {blogVid ? <div ref={content} className='blog__vid-wrapper' dangerouslySetInnerHTML={{ __html: `<div class='blog__vid'>${blogVid}</div>` }} /> : <FeaturedBlogImg />}
+            <div dangerouslySetInnerHTML={{ __html: `${wp.excerpt.slice(0, 300)} <span style='color: rgb(30, 195, 196); font-weight: bold;'>read more &#8594;</span>` }} />
           </Link>
           <Link className='home__cta-btn home__cta-btn--blog' to='/blog' title='our blog'>
             our blog &#8594;
