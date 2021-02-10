@@ -176,7 +176,6 @@ const IndexPage = () => {
         </div>
         <div className='about__container home__social'>
           <InstagramIcon />
-          {/* <Instagram /> */}
           <h3 className='home__social-cta'>
             follow us on <a href='https://instagram.com/nrdstr_' title='nrdstr on instagram'>instagram</a>.
           </h3>
