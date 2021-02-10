@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import Img from "gatsby-image"
 import Logo from '../components/Logo'
 import Socials from '../components/Socials'
-import Instagram from '../components/instagram'
 import { InstagramIcon } from '../icons/icons'
 import Footer from '../components/Footer'
 import SEO from "../components/seo"
