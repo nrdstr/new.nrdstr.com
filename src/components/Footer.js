@@ -29,12 +29,12 @@ const Footer = ({ size }) => {
                 </Link>
                 </div>
             </div>
-            <p>&copy;2020 <strong>nrdstr</strong>.com | <Link className='link' to='/privacy-policy' title='Privacy Policy'>privacy policy</Link></p>
+            <p>&copy;{new Date().getFullYear()} <strong>nrdstr</strong>.com | <Link className='link' to='/privacy-policy' title='Privacy Policy'>privacy policy</Link></p>
         </footer>
     } else {
         return (
             <footer className='footer animate--fade-in'>
-                <p>&copy;2020 <strong>nrdstr</strong>.com | <Link className='link' to='/privacy-policy' title='Privacy Policy'>privacy policy</Link></p>
+                <p>&copy;{new Date().getFullYear()} <strong>nrdstr</strong>.com | <Link className='link' to='/privacy-policy' title='Privacy Policy'>privacy policy</Link></p>
             </footer>
         )
     }
